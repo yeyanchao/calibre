@@ -1,0 +1,2775 @@
+# Each release can have new features and bug fixes. Each of which
+# must have a title and can optionally have linked tickets and a description.
+# In addition they can have a type field which defaults to minor, but should be major
+# for important features/bug fixes.
+# Also, each release can have new and improved recipes.
+
+# - version: ?.?.?
+#   date: 2012-??-??
+#
+#   new features:
+#     - title: 
+#  
+#   bug fixes:
+#     - title: 
+#
+#   improved recipes:
+#     - 
+#
+#   new recipes:
+#     - title: 
+
+- version: 0.9.3
+  date: 2012-10-19
+
+  new features:
+    - title: "Conversion: Add support for CSS 3 selectors by switching to the new cssselect module"
+
+    - title: "Driver for WayteQ xBook and Topwise Android tablet"
+      tickets: [1066083,1067105]
+
+    - title: "Add an output profile for the Kindle PaperWhite"
+
+    - title: "Kobo driver: Improve performance when a large number of shelves are created on the device."
+      tickets: [1066633]
+
+    - title: "Catalogs: Put catalog sections at top level of ToC for EPUB/AZW3 catalogs."
+
+    - title: "Adding books: When duplicates are found, show the list of possible duplicates in calibre with title and author."
+ 
+  bug fixes:
+    - title: "KF8 Input: Fix conversion/vieweing of KF8 files generated with the unreleased? kindlegen 2.7."
+      tickets: [1067310]
+
+    - title: "Kindle driver: Increase the size of the cover thumbnails sent by calibre to the device. This fixes the problem of cover thumbnails not showing up on the PaperWhite"
+
+    - title: "MTP driver: Fix sorting on the title column of the device view."
+      tickets: [1067562]
+
+    - title: "Catalogs: Fix regression that caused authors and titles to be be incorrectly listed under symbols on OSX < 10.8."
+
+    - title: "Catalogs: Fix error when generating catalog in non english locale and the user has specified a prefix rule using a Yes/no column."
+      tickets: [1065452]
+
+    - title: "E-book viewer: Remove the reload entry from the context menu as it is not supported in paged mode."
+      tickets: [1065615]
+
+  improved recipes:
+    - Richmond Times Dispatch
+    - Various Polish news sources
+    - Aksiyon dergisi
+    - Spektrum der Wissenschaft
+    - Zeit Online
+    - Baltimore Sun
+    - LWN Weekly
+    - The Sun
+
+  new recipes:
+    - title: Various Polish news sources
+      author: fenuks
+
+- version: 0.9.2
+  date: 2012-10-11
+
+  new features:
+    - title: "Wireless driver: Speed up deleting of multiple books"
+
+    - title: "E-book viewer: Add options to hide the scrollbar and show reading position in full screen mode."
+      tickets: [1047450]
+
+    - title: "News download: Add a field to allow recipe authors to tell calibre to remove duplicate articles that a re present in more than one section from the download."
+
+    - title: "Metadata download: Turn off the use of the published date for the earliest edition a book as the published date. The earliest edition was identified via worldcat.org, which has rather poor data, leading to the occasional incorrect result. If you want this feature back, you can turn it on again via Preferences->Metadata download."
+ 
+  bug fixes:
+    - title: "ODT Input: More workarounds for the image positioning markup produced by newer versions of LibreOffice."
+      tickets: [1063207]
+
+    - title: "Metadata download dialog: Fix selected cover being changed when covers are re-sorted after download completes"
+
+    - title: "MTP driver: Ignore errors when getting the driveinfo.calibre file from the device and simply regenerate it"
+
+    - title: "E-book viewer: Use the system locale settings to display the 24/12 hour clock in full screen mode"
+      tickets: [1063209]
+
+    - title: "Content Server: Make OPDS initial page respect the fields to display tweak"
+
+    - title: "Fix regression that caused calibre to not use OPF files when adding books recursively from directories with multiple books per directory"
+
+    - title: "KF8 Output: Fix handling of input documents that have URL unsafe characters in the file names of their images."
+      tickets: [1062477]
+
+    - title: "Fix enumeration type custom column not being merged."
+      tickets: [1061602]
+
+  improved recipes:
+    - Pubblico Giornale
+    - Der Spiegel
+    - Shortlist
+    - FHM UK
+    - Countryfile
+    - Cosmo UK
+    - The Sun UK
+    - NME
+
+  new recipes:
+    - title: PVP Online, Mobile Nations, The Verge and Television Without Pity 
+      author: Krittika Goyal
+
+- version: 0.9.1
+  date: 2012-10-05
+
+  new features:
+    - title: "New driver for the Kobo Touch version 2.0+ firmware and Kobo Glo and Mini. See http://www.mobileread.com/forums/showthread.php?t=192863 for details"
+      tickets: [1024983,1059585]
+
+    - title: "Driver for Motorola Defy XT"
+      tickets: [1061903]
+
+    - title: "Wireless driver: Always use automatic metadata management, regardless of the setting in Preferences->Devices"
+
+    - title: "Sending books by email: Allow sending to multiple email addresses at once separated by commas."
+      tickets: [1052332]
+
+    - title: "KF8 Output: Add the css passed in through the extra css conversion option to the generated inline ToC."
+      tickets: [1052343]
+
+    - title: "Windows: No longer use fontconfig to scan the system for available fonts. Instead use the Windows API. Should fix crashes/instability caused by fonts that fontconfig cannot handle"
+
+    - title: "When editing a blank (undefined) published date in the edit metadata dialog, have the calendar popup jump to the current date instead of the date 1-1-101"
+      tickets: [1058531]
+
+    - title: "FB2 Input: Add support for th, code and strikethrough tags and also rowspan, colspan and align attributes."
+      tickets: [1059351,1058591]
+ 
+  bug fixes:
+    - title: "Get Books: Update Woblink"
+
+    - title: "Position the next selected book better after deleting multiple books from the library view"
+      tickets: [1051135]
+
+    - title: "Allow using the Enter key to select the cover in the metadata download dialog"
+      tickets: [1060472]
+
+    - title: "PDF Output: Handle embedded fonts better on linux"
+
+    - title: "HTML Input: Guess mimetype correctly for references to image files without file extensions."
+      tickets: [1059349]
+
+    - title: "Catalog generation: Workaround for bug in the ICU library on older OS X systems that caused catalog generation to fail when certain non-ascii characters are present in the metadata."
+      tickets: [1057862]
+
+    - title: "Wireless driver: Do not abort if BonJour registration fails, as we can still use broadcast to connect"
+
+    - title: "KF8 Output: Fix invalid output being generated for some files with very large blocks of contiguous non-ascii text"
+
+  improved recipes:
+    - FC Knudde 
+    - Stamgaten
+    - Foreign Policy
+    - Washington Post
+    - Twitch Films
+    - Nature News
+
+  new recipes:
+    - title: IOL News and The New Age 
+      author: Darko Miletic
+
+- version: 0.9.0
+  date: 2012-09-28
+
+  new features:
+    - title: "For a summary of the major changes in calibre between 0.8 and 0.9, see http://calibre-ebook.com/new-in/nine"
+      type: major
+
+  bug fixes:
+    - title: "KF8 Output: Fix handling of &amp; &lt; and &gt; entities in the text. They were sometimes being incorrectly unescaped."
+
+    - title: "Calibre portable: Add a manifest to the portable installer exe to prevent the application compatibility wizard from warning about a possible failed installation on windows 7. Also fixes installer requiring admin privileges on some computers" 
+      tickets: [1057042]
+
+    - title: "EPUB metadata: Fix book producer not being set when updating EPUB metadata"
+
+    - title: "EPUB metadata: Fix incorrect namespace on the role attribute of <dc:creator> tags when updating the metadata in EPUB"
+
+    - title: "Get Books: Fix incorrect price retrieval from ebooks.com."
+      tickets: [1055785]
+
+    - title: "MTP windows driver: Fix main memory and storage card sometimes swapped"
+      tickets: [1055129]
+
+    - title: "PDF Output: On windows, remove any embedded fonts before generating the PDF as on windows, Qt generates image based PDFs when embedded fonts are present."
+      tickets: [1053906]
+
+    - title: "MTP windows driver: Do not try to connect to unsuitable devices such as the iPhone."
+      tickets: [1054562]
+
+    - title: "KF8 Input: Handle files that use non ascii paths/anchor names in the guide entries."
+      tickets: [1053751]
+
+  new recipes:
+    - title: Pubblico Giornale 
+      author: iusvar
+ 
+  improved recipes:
+    - Monitor Online
+    - El Pais
+    - Chronicle of Higher Education
+    - Baltimore Sun
+    - Mac World
+    - Maximum PC
+    - Financial Times UK
+
+- version: 0.8.70
+  date: 2012-09-21
+
+  new features:
+    - title: "Support for connecting MTP (non disk based) devices via USB, such as the Nexus 7 and the Kindle Fire HD (Windows Vista and newer and Linux only)"
+      type: major
+      description: "calibre can now detect and connect to devices that do not present themselves as USB disks to the operating system. Newer Android devices all use the 'MTP' protocol when connected via USB. calibre now supports devices using this protocol on both Windows (Vista and newer) and Linux."
+
+    - title: "Calibre Portable: Create a new installer that does not require manually unzipping the Calibre Portable folder. Instead just run the installer and point it to the location you want to install to."
+
+    - title: "Calibre Portable: Add support for multiple libraries created inside the 'Calibre Portable' folder."
+
+    - title: "In the main book list when editing a blank published date, use a default value of Jan 2000 so that changing the date it easier"
+
+    - title: "Template language: Add function approximate_formats() to get list of formats saved in the db for a book as opposed to the formats that actually exist on disk"
+
+    - title: "Template language: Add a couple of new functions to get the path to individual book formats and the calibre library as a whole"
+
+    - title: "Drivers for HTC Flyer and Trekstor 4ink"
+ 
+  bug fixes:
+    - title: "Conversion: Do not error out when tags have unparseable color attributes."
+      tickets: [1053583]
+
+    - title: "AZW3 Output: Do not error out if the input document contains embedded fonts of less than 1040 bytes."
+      tickets: [1052892]
+
+    - title: "Catalogs: Fix AZW3 output not properly indexed"
+
+    - title: "Get Books: Remove Beam Books due to lack of response to issues with the store."
+
+    - title: "Windows: Ignore drives A: and B: when scanning for the drives belonging to a device"
+
+    - title: "Kindle driver: Fix generation of apnx files for newer kindle firmware."
+
+    - title: "News download: If the output format is set to azw3, generate periodicals in mobi format as amazon does not support azw3 periodicals."
+
+  improved recipes:
+    - Indian Express
+    - Anadtech
+    - London Review of Books (subscrption version)
+    - Livemint
+    - xkcd
+    - Doghouse Diaries
+
+  new recipes:
+    - title: Various Hungarian recipes 
+      author: laca
+
+    - title: NSFW Corp 
+      author: Darko Miletic.
+
+    - title: FC Knudde and Stamgasten
+      author: drMerry
+
+
+- version: 0.8.69
+  date: 2012-09-14
+
+  new features:
+    - title: "E-book viewer: Add a button to the toolbar to switch themes easily"
+      tickets: [1047992]
+
+    - title: "When downloading metadata for many books, if some of them fail, add an option to the downloaded message to show the failed books in the main book list, so that they can be individually processed easily"
+
+    - title: "Remember last used window size of the conversion dialogs."
+      tickets: [1049265]
+
+    - title: "Kindle driver: Turn on sending of azw3 files to kindles by default, since the KK now has azw3 support"
+
+    - title: "Conversion: Add support for CSS pseudo classes :hover, :link, :visited, :first-line, :focus, :active, :first-letter"
+
+    - title: "Wireless device driver: Make the default save template not use folders"
+ 
+  bug fixes:
+    - title: "Fix a regression in th previous release that broke sending of books to the second SD card in SONY readers"
+      tickets: [1047992]
+
+    - title: "Fix a memory leak when scanning for devices in windows"
+
+    - title: "Ebook-viewer: When displaying mathematics, reflow equations that dont fit on a single line"
+
+    - title: "Catalogs: Do not mark the AZW3 catalog as a periodical, as most Kindle devices cannot handle AZW3 periodicals"
+
+    - title: "Content server: When using a custom IP address to listen on via Preferences->Tweaks advertise that IP address via BonJour."
+
+    - title: "Fix ebook catalog generation on linux systems where the encoding is not UTF-8."
+      tickets: [1048404]
+
+  improved recipes:
+    - De Volksrant
+    - Metro UK
+    - Countryfile
+    - Die Zeit (subscription)
+    - Birmingham post
+
+  new recipes:
+    - title: History Today 
+      author: Rick Shang
+
+- version: 0.8.68
+  date: 2012-09-07
+
+  new features:
+    - title: "Drivers for the Nokia N9, Viewsonic 7e, Prestigio PER3274B and Coby Kyros 7035 "
+      tickets: [1046794,1046544]
+
+    - title: "Add a tutorial on creating catalogs to the User Manual and a link to it in the create catalogs dialog"
+
+    - title: "Wireless device connections: Add an option to force calibre to listen on a particular IP address. Access it by customizing the plugin in Preferences->Plugins"
+
+    - title: "Android driver: Add an extra customization option to configure the directory to which ebooks are sent on the storage cards."
+      tickets: [1045045]
+
+    - title: "Add an option under Preferences->Look & Feel->Book Details to hide the cover in the book details panel"
+
+    - title: "The Calibre Companion Android app that allows wireless connection of Android device to calibre is out of beta. See https://play.google.com/store/apps/details?id=com.multipie.calibreandroid"
+ 
+  bug fixes:
+    - title: "Fix sorting by author not working in the device view in calibre when connected to iTunes"
+      tickets: [1044619]
+
+    - title: "Fix using the 'configure this device' menu action not validating settings"
+
+    - title: "Device drivers: Ignore corrupted entries in metadata.calibre, instead of raising an error"
+
+    - title: "PDF Output: Do not error out when generating an outline which points to pages that have been removed."
+      tickets: [1044799]
+
+    - title: "PDF Output: Fix incorrect page numbers being generated in the outline when converting some books"
+
+    - title: "PDF Output: Reduce memory consumption when writing out the PDF file, by using a stream"
+
+    - title: "EPUB metadata: When there are multiple <dc:date> tags use the one with the earliest date as the published date"
+
+  improved recipes:
+    - Wall Street journal (subscription version)
+    - Houston Chronicle
+    - Various Romanian news sources
+    - Business Week Magazine
+    - Arcamax
+
+- version: 0.8.67
+  date: 2012-08-31
+
+  new features:
+    - title: "PDF Output: Generate a PDF Outline based on the Table of Contents of the input document"
+
+    - title: "Conversion: Add an option under Structure Detection to set the 'Start reading at' metadata with an XPath expression."
+      tickets: [1043233]
+
+    - title: "Speed up changing the title and author of files with books larger than 3MB by avoiding an unnecessary extra copy."
+
+    - title: "Wireless device driver: Make detecting and connecting to devices easier on networks where mdns is disabled"
+
+    - title: "PDF Output: Allow choosing the default font family and size when generating PDF files (under PDF Options) in the conversion dialog"
+
+    - title: "Metadata dialog: Comments editor: Allow specifying the name of a link when using the insert link button."
+      tickets: [1042683]
+
+    - title: "Remove the unmaintained pdfmanipulate command line utility. There are many other tools that provide similar functionality, for example, pdftk and podofo"
+ 
+  bug fixes:
+    - title: "Catalogs: Fix regression that broke sorting of non series titles before series titles"
+
+    - title: "PDF Output: Do not create duplicate embedded fonts in the PDF for every individual HTML file in the input document"
+
+    - title: "Fix regression that broke DnD of files having a # character in their names to the book details panel"
+
+    - title: "PDF Output: Allow generating PDF files with more than 512 pages on windows."
+      tickets: [1041614]
+
+    - title: "Fix minor bug in handling of the completion popups when using the next/previous buttons in the edit metadata dialog"
+      ticket: [1041389]
+
+  improved recipes:
+    - Coding Horror
+    - TIME Magazine
+
+  new recipes:
+    - title: Cumhuriyet Yzarlar 
+      author: Sethi Eksi
+
+    - title: Arcadia 
+      author: Masahiro Hasegawa
+
+    - title: Business Week Magazine and Chronicle of Higher Education 
+      author: Rick Shang
+
+    - title: CIPER Chile 
+      author: Darko Miletic
+
+- version: 0.8.66
+  date: 2012-08-24
+
+  new features:
+    - title: "E-book viewer: Support the display of mathematics in e-books. Supports both embedded TeX and MathML"
+      description: "The calibre ebook viewer can now display embedded mathematics (symbols, equations, fractions, matrices, etc.) in EPUB and HTML ebooks. For details, see: http://manual.calibre-ebook.com/typesetting_math.html"
+      type: major
+
+    - title: "Drivers for SONY PRS-T2, Freelander PD10 and Coolreader Tablet"
+      tickets: [1039103]
+
+    - title: "Wireless device connections: Use a streamed mode for improved networking performance leading to much less time spent sending metadata to/from the device. Also make it easier to specify a fixed port directly in the dialog used to start the connection."
+
+    - title: "Get books: Add ebooksgratuitis.com"
+ 
+  bug fixes:
+    - title: "PDF Output: Handle input epub documents with filenames starting with a dot. Also do not hang if there is an unhandled error."
+      tickets: [1040603]
+
+    - title: "Get Books: Update B&N plugin to handle changes to the B&N website"
+
+    - title: "Content server: Fix regression that caused the port being advertised via BonJour to be incorrect if the user changed the port for the server."
+      tickets: [1037912]
+
+
+  improved recipes:
+    - Variety
+    - The Times UK
+
+  new recipes:
+    - title: Le Monde subscription version 
+      author: Remi Vanicat
+
+    - title: Brecha Digital 
+      author: Darko Miletic
+
+- version: 0.8.65
+  date: 2012-08-17
+
+  new features:
+    - title: "A new wireless device driver. This allows connecting wirelessly to a device running a 'smart' calibre client"
+      description: "The wireless connection functions just as if the device was plugged into the computer by USB cable. Currently, Android devices are supported. See https://play.google.com/store/apps/details?id=com.multipie.calibreandroid"
+      type: major
+
+    - title: "MOBI Output: Add an option to control the type of MOBI file produced, to the MOBI Output conversion options. You can now generate an old MOBI6, a new KF8 or a joint MOBI6/KF8 file. By default, MOBI6 files are generated. This replaces the previous use of a tweak."
+
+    - title: "E-book viewer: Make paged mode the default. You can go back to the old flow mode by clicking the button with the yellow scroll in the top right corner of the viewer."
+
+    - title: "Driver for COBY kYROS MID7042 and Samsung Galaxy Ace S5839i"
+
+  bug fixes:
+    - title: "Update version of poppler bundled with calibre to fix reading covers from some PDF files"
+
+    - title: "Get Books: Fix clicking of results from Diesel books when there is only a single result not working"
+
+    - title: "Improve detection of system language on first run of calibre"
+      tickets: [1036354]
+
+    - title: "When finding the next series index and the last series index is a fractional number, use the next largest integer, instead of just adding 1"
+
+    - title: "Fix exception when saving a search/replace when no saved search/replace had been opened previously in the bulk search/replace dialog"
+      tickets: [1036464]
+
+    - title: "Fix restore database not restoring entries for the original_* formats"
+
+    - title: "Fix first run wizard not allowing empty email sending settings"
+      tickets: [1036358]
+
+    - title: "Do not error out when setting the cover for a book that has no folders in the library."
+      tickets: [1035935]
+
+    - title: "Conversion pipeline: Ignore unparseable values in the color attribute of font tags, instead of erroring out on them."
+      tickets: [1035633]
+
+    - title: "Catalogs: Fix regression that broke creation of catalogs while a device is connected"
+
+    - title: "Fix --with-library=/whatever not working for calibredb list"
+
+  improved recipes:
+    - Slashdot
+    - Various Canadian newspapers
+    - Business Spectator
+
+- version: 0.8.64
+  date: 2012-08-09
+
+  new features:
+    - title: "E-book viewer: Allow viewing images in the book in a separate pop-up window by right clicking on the image. Useful if you want to keep some image, like a map to the side while reading the book."
+
+    - title: "Catalogs: Allow generation of catalogs in AZW3 format. Also add more powerful configuration options to exclude books and set prefixes. See http://www.mobileread.com/forums/showthread.php?t=187298 for details."
+
+    - title: "Generate a PDF version of the User Manual"
+ 
+  bug fixes:
+    - title: "News download: Fix broken handling of nesting for HTML 5 tags when parsing with BeautifulSoup"
+
+    - title: "EPUB: Handle files in the EPUB that have semi-colons in their file names. This means in particular using URL escaping when creating the NCX as ADE cannot handle unescaped semi-colons in the NCX."
+      tickets: [1033665]
+
+    - title: "Conversion pipeline: Ignore unparseable CSS instead of erroring out on it."
+      tickets: [1034074]
+
+    - title: "When setting up a column coloring rule based on the languages column, allow entry of localized language names instead of only ISO codes"
+
+    - title: "Catalogs: Generate cover for mobi/azw3 catalogs"
+
+    - title: "Update the last modified column record of a book, whenever a format is added to the book."
+
+    - title: "E-book viewer: Fix line scrolling stops at breaks option not working in paged mode"
+      tickets: [1033430]
+
+    - title: "MOBI Output: Fix ToC at start option having no effect when converting some input documents that have an out-of-spine ToC."
+      tickets: [1033656]
+
+    - title: "Catalog Generation: When generating EPUB/MOBI catalogs add more flexible rules for excluding books. Also add rules to customize the prefix characters used."
+
+    - title: "Make setting published date using metadata search/replace more robust."
+
+    - title: "Tag Browser: Flatten the display of sub-groups when sort by is not set to 'name'."
+      tickets: [1032746]
+
+    - title: "Fix isbn:false not matching if other identifiers are attached to the book."
+
+  improved recipes:
+    - The New Republic
+    - ZDNet
+    - Metro UK
+    - FHM UK
+
+  new recipes:
+    - title: eKundelek.pl 
+      author: Artur Stachecki
+
+    - title: Sueddeutsche Mobil 
+      author: Andreas Zeiser
+
+- version: 0.8.63
+  date: 2012-08-02
+
+  new features:
+    - title: "E-book viewer: Allow quick saving and loading of viewer settings as 'themes'." 
+      tickets: [1024611]
+
+    - title: "Ebook-viewer: Add a restore defaults button to the viewer preferences dialog"
+
+    - title: "E-book viewer: Add simple settings for text and background colors"
+
+    - title: "Add an entry to save to disk when right clicking a format in the book details panel"
+
+    - title: "ODT metadata: Read first image as the metadata cover from ODT files. Also allow ODT authors to set custom properties for extended metadata."
+
+    - title: "E-book viewer and PDF Output: Resize images that are longer than the page to fit onto a single page"
+ 
+  bug fixes:
+    - title: "KF8 Output: Fix bug where some calibre generated KF8 files would cause the Amazon KF8 viewer on the Touch to go to into an infinite loop when using the next page function"
+      tickets: [1026421]
+
+    - title: "News download: Add support for <img> tags that link to SVG images."
+      tickets: [1031553]
+
+    - title: "Update podofo to 0.9.1 in all binary builds, to fix corruption of some PDFs when updating metadata."
+      tickets: [1031086]
+
+    - title: "Catalog generation: Handle authors whose last name is a number."
+
+    - title: "KF8 Input: Handle html entities in the NCX toc entries correctly"
+
+    - title: "Fix a calibre crash that affected some windows installs"
+      tickets: [1030234]
+
+    - title: "MOBI Output: Normalize unicode strings before writing to file, to workaround lack of support for non-normal unicode in Amazon's MOBI renderer."
+      tickets: [1029825]
+
+    - title: "EPUB Input: Handle files that have duplicate entries in the spine"
+
+    - title: "Fix regression in Kobo driver that caused the on device column to not be updated after deleting books"
+
+  new recipes:
+    - title: Dziennik Polski 
+      author: Gregorz Maj 
+      
+    - title: High Country Blogs 
+      author: Armin Geller
+
+    - title: Philosophy Now 
+      author: Rick Shang
+
+- version: 0.8.62
+  date: 2012-07-27
+
+  new features:
+    - title: "Book details panel: Allow right clicking on a format to delete it."
+
+    - title: "When errors occur in lots of background jobs, add an option to the error message to temporarily suppress subsequent error messages."
+      tickets: [886904]
+
+    - title: "E-book viewer full screen mode: Allow clicking in the left and right page margins to turn pages."
+      tickets: [1024819]
+
+    - title: "Drivers for various Android devices"
+      tickets: [1028690,1027431]
+
+    - title: "Advanced search dialog: When starting on the title/author/etc. tab, restore the previously used search kind as well."
+      tickets: [1029745]
+
+    - title: "When presenting the calibre must be restarted warning after installing a new plugin, add a restart now button so that the user can conveniently restart calibre. Currently only works when going vie Preferences->Plugins->Get new plugins"
+ 
+  bug fixes:
+    - title: "Fix main window layout state being saved incorrectly if calibre is killed without a proper shutdown"
+
+    - title: "Fix boolean and date searching in non english calibre installs."
+
+    - title: "Conversion: Ignore invalid chapter detection and level n ToC expressions instead of erroring out"
+
+  improved recipes:
+    - Psychology Today
+    - The Smithsonian
+    - The New Republic
+    - Various updated Polish news sources
+    - The Sun
+    - San Francisco Bay Guardian
+    - AnandTech
+    - Smashing Magazine
+
+  new recipes:
+    - title: Linux Journal and Conowego.pl 
+      author: fenuks
+
+    - title: A list apart and .net magazine 
+      author: Marc Busque
+
+- version: 0.8.61
+  date: 2012-07-20
+
+  new features:
+    - title: "E-book viewer: Add a paged mode that splits up the text into pages, like in a paper book instead of presenting it as a single column. To activate click the button with the yellow scroll icon in the top right corner."
+      type: major
+      description: "In paged mode, the ebook viewer no longer cuts off the last line of text at the bottom of the screen, and it respects CSS page-break directives. You can also set page margins and control the number of pages displayed on screen by clicking the Preferences button in the viewer and going to 'Text layout in paged mode'."
+
+    - title: "Digitally sign the calibre OS X and windows builds"
+
+    - title: "Get Books: Add Mills and Boon UK"
+
+    - title: "Various minor improvements to the Bulk metadata edit dialog"
+      tickets: [1025825, 1025838, 1025628]
+
+    - title: "Fix various regression in the auto-complete functionality for authors/series/tags etc introduced in 0.8.60"
+
+    - title: "Drivers for various new Android devices"
+      tickets: [1024934]
+
+    - title: "MOBI: Add support for the new language EXTH header field in MOBI files generated by kindlegen 2.5"
+ 
+  bug fixes:
+    - title: "KF8 Output: Fix calibre produced KF8 files not showing the 'Use publisher font' option on the Kindle Touch when they have embedded fonts"
+
+    - title: "Txt/fb2/rtf/pml/rb output: Fix non-visibile element's tail text (which should be visible) is being ignored when it shouldn't." 
+      tickets: [1026541]
+
+    - title: "Book details panel: When displaying a link to amazon, use a country specific name like amazon.fr instead of using amazon.com for all countries"
+
+    - title: "Conversion: When splitting on page breaks, ignore page-breaks with values of auto and inherit. "
+      tickets: [1018875]
+
+    - title: "Metadata jacket: Specify foreground in addition to the  background color for the title banner so that it remain readable if the user tries to monkey with the CSS in the viewer."
+
+    - title: "PDF Output: Fix rendering of cover as first age of PDF (ignore margins so that the image covers the entire page)"
+
+    - title: "Linux binaries: Bundle libglib to avoid incompatibilities with glib on various distros."
+      tickets: [1022019]
+
+    - title: "Fix find_identical_books() choking on books with too many authors"
+
+
+  improved recipes:
+    - Toronto Star
+    - American Prospect
+    - faz.net
+
+- version: 0.8.60
+  date: 2012-07-13
+
+  new features:
+    - title: "When searching, allow use of un-accented characters to match accented characters in all fields and all languages (not just authors and English as before)"
+      description: "The rules for matching un-accented characters are done in a language dependent way. So if your calibre interface language is set to English, n will match both n and ñ, but if it is set to Spanish, it will match only n, as in Spanish ñ is a separate alphabet in Spanish. This makes searching a little slower, so if you have a very large library you can turn it off via Preferences->Searching."
+      type: major
+      
+    - title: "Content server: Show a best guess for the IP address the content server is currently listening at in the connect/share menu."
+      tickets: [1024128]
+
+    - title: "E-book viewer: Add an option to show a clock in full screen mode."
+      tickets: [1022086]
+
+    - title: "Drivers for Paquito Imaginarium and a few Android phones"
+      tickets: [1024021,1023613,1023461,1022401]
+
+    - title: "HTMLZ Output: Add option to use the book title as the filename for the html file inside the archive"
+
+    - title: "Make the list of displayed fields in the book details panel a per library setting"
+
+    - title: "Have autocomplete on authors/series/tags/etc. ignore accented characters when finding matches (similar to the changes to search above)"
+
+    - title: "Support for retina displays in OS X (I hope)"
+      tickets: [1022191]
+
+    - title: "Remove the dependency on the zip command line tool when developing plugins"
+
+  bug fixes:
+    - title: "Kobo driver: Do not perform write operations on the Kobo database if its version is newer than the latest version the driver supports, for safety"
+
+    - title: "KF8 Input: Ignore encoding declarations inside the html markup, as they are sometimes incorrect."
+      tickets: [1022933]
+
+    - title: "Force refresh of cached composite column values when values in the cache are changed"
+
+    - title: "Fix a regression that broke calibre --shutdown-running-calibre on windows."
+      tickets: [1022504]
+
+    - title: "Possible workaround for Qt 4.8.2 open file dialog failing on some linux distros."
+      tickets: [1022019]
+
+    - title: "Catalogs: Fix some epubcheck errors when generating catalogs in EPUB format"
+
+    - title: "Linux installer: When calling the xdg utilities use system libraries rather than the libraries bundled with calibre"
+
+    - title: "Fix numeric sort for composite custom columns that use custom separators"
+      tickets: [1021814]
+
+    - title: "Tag browser: When grouping by first letter, handle languages that have 'letters' made of more than one character. This can be turned off via Preferences->Tweaks"
+
+  improved recipes:
+    - Hola magazine
+    - Adventure Gamers
+    - Cosmopolitan UK
+    - Onda Rock
+
+  new recipes:
+    - title: Empire Magazine 
+      author: Dave Asbury
+
+    - title: NZZ Folio 
+      author: Bernd Leinfelder
+
+    - title: Warentest 
+      author: asdfdsfksd
+
+
+- version: 0.8.59
+  date: 2012-07-06
+
+  new features:
+    - title: "Drivers for Samsung SGH-T989 and Sony Ericsson Sola"
+      tickets: [1021365]
+
+    - title: "Conversion pipeline: When removing the first image, also remove the html file the image is found in, if that file has no other content. Allows this option to be used to remove covers from EPUB files without leaving behind a blank page."
+
+    - title: "Content server: Add a navigation panel at the bottom of each page."
+      tickets: [1020225]
+
+    - title: "calibredb: Add a backup_metadata command to manually run the backup to opf from the command line"
+
+    - title: "User defined driver: Add option to swap main memory and card a."
+      tickets: [1020056]
+
+    - title: "Add new option to the series_index_auto_increment tweak, no_change, that causes calibre not to change the series_index when the series is changed"
+ 
+  bug fixes:
+    - title: "PDF Output: Resize large images so that they do not get off at the right edge of the page."
+
+    - title: "On linux ensure that WM_CLASS for the main calibre GUI is set to 'calibre-gui' to match the name of the calibre-gui.desktop file. This is apparently required by the GNOME 3 shell."
+      tickets: [1020297]
+
+    - title: "Update ICU in all builds to version 49.1"
+
+    - title: "Tag browser: Fix regression that broke drag and drop between user categories in the tag browser"
+
+    - title: "When copying to library and deleting after copy, do not place deleted files in recycle bin, as this is redundant and slow (they have already been copied into another library)"
+
+    - title: "Fix yes/no fields with value of No not showing up in the book details panel"
+
+    - title: "Catalogs: Better sorting for non English languages"
+      tickets: [930882] 
+
+    - title: "Get Books: Fix Foyles UK, Weightless books, ebooks.com and ozon.ru"
+
+    - title: "CHM Input: Fix handling of chm files that split their html into multiple sub-directories."
+      tickets: [1018792]
+
+  improved recipes:
+    - FHM UK
+    - The Age
+    - weblogs_ssl
+    - Heraldo.es
+
+  new recipes:
+    - title: CATO Institute and Heritage Foundation
+      author: _reader
+
+- version: 0.8.58
+  date: 2012-06-29
+
+  new features:
+    - title: "Add some texture to calibre generated covers"
+
+    - title: "Drivers for Sogo SS-4370, HTC G2 and Lenovo ThinkPad Tablet"
+      tickets: [1019050, 1017010]
+
+    - title: "Add search to the Manage tags/series/etc. dialogs"
+
+    - title: "News download: Add support for images embedded in the HTML"
+
+    - title: "calibre -s now waits for calibre to shutdown"
+ 
+  bug fixes:
+    - title: "Workaround for iTunes breaking scripting with version 10.6.3 on OS X."
+      tickets: [1012243]
+
+    - title: "EPUB Input: When there are multiple elements of the same type in the OPF guide, use the first rather than the last element."
+
+    - title: "Windows: Disable the new UI style if the color depth of the desktop is less than 32 bits per pixel"
+
+    - title: "ISBNDB metadata plugin: Return results even though they have no comments"
+
+    - title: "More robust handling of EINTR during IPC"
+
+    - title: "Metadata download: Support for amazon's new results page markup"
+
+    - title: "EPUB Output: Fix a bug that could cause corrupted output when doing an EPUB/OEB to EPUB conversion if the input EPUB had multiple files with the same name"
+
+    - title: "KF8 Output: Fix a couple of bugs that could lead to generation of invalid KF8 files."
+      tickets: [1016672]
+
+  improved recipes:
+    - ABC Digital
+    - O Globo
+
+  new recipes:
+    - title: Sign of the Times and New Statesman
+      author: TerminalVeracity
+
+    - title: CT24 
+      author: zoidozoido
+
+    - title: SmileZilla
+      author: Will
+
+    - title: Marketing Sensoriale 
+      author: NotTaken
+
+- version: 0.8.57
+  date: 2012-06-22
+
+  new features:
+    - title: "PDF Output: Full pagination support. No more cutoff bottom line."
+      type: major
+      description: "Fixes a long standing bug in calibre's PDF Output that caused the bottom line of some pages to be partially cut off and prevented top and bottom margins from working."
+
+    - title: "calibredb add now prints out the ids of added books"
+      tickets: [1014303] 
+
+    - title: "Kobo Vox driver: Add support for new Google Play firmware"
+      tickets: [1014129] 
+
+    - title: "Driver for Prestigio PMP5097PRO"
+      tickets: [1013864] 
+
+    - title: "Add option to disable tooltips in the book list under Preferences->Look & Feel"
+
+    - title: "When customizing builtin recipes download the latest version of the recipe to customize instead of using the possibly out of date bundled version"
+ 
+  bug fixes:
+    - title: "PDF Output: Use the cover from the input document when no cover is specified during a conversion"
+
+    - title: "E-book Viewer: Printing now has proper pagination with top and bottom margins no lines partially cut-off at the bottom and full style retention"
+
+    - title: "KF8 Input: Handle files with incorrectly encoded guide type entries."
+      tickets: [1015020]
+
+    - title: "E-book viewer: Disable hyphenation on windows xp as Qt WebKit barfs on soft hyphens on windows XP"
+
+    - title: "Handle OS X systems with invalid palette colors."
+      tickets: [1014900]
+
+    - title: "Tag Browser: Fix regression that broke partitioning of hierarchical categories."
+      tickets: [1014065]
+
+    - title: "LRF Output: Handle negative page margins"
+      tickets: [1014103]
+
+    - title: "Template language: Fix arithmetic functions to tolerate the value 'None' as returned by raw_field()"
+
+    - title: "Fix custom title sort set in the edit metadata dialog getting reset by the conversion dialog"
+
+  improved recipes:
+    - The Economist
+    - Akter
+    - 24 Sata sr
+    - Novi List
+    - Metro Montreal
+    - Mode Durable
+    - CanardPC
+    - The Economic Collapse
+    - Our Daily Bread
+
+  new recipes:
+    - title: Akter Daily
+      author: Darko MIletic
+
+    - title: BBC Brasil 
+      author: Claviola
+
+    - title: Homopedia.pl 
+      author: rainbowwarrior
+
+    - title: National Geographic Magazine 
+      author: Terminal Veracity
+
+    - title: Something Awful
+      author: atordo
+
+    - title: Huffington Post UK 
+      author: Krittika Goyal
+
+- version: 0.8.56
+  date: 2012-06-15
+
+  new features:
+    - title: "Make the new calibre style default on Windows and OS X."
+      type: major
+      description: "This change gives a more 'modern' feel to the calibre user interface with focus highlighting, gradients, rounded corners, etc. In case you prefer the old look, you can restore under Preferences->Look & Feel->User interface style"
+
+    - title: "Get Books: Add the new SONY Reader store"
+
+    - title: "Read metadata from .docx (Microsoft Word) files"
+
+    - title: "Allow customizing the behavior of the searching for similar books by right clicking the book. You can now tell calibre to search different columns than the traditional author/series/publisher/tags/etc. in Preferences->Searching"
+
+    - title: "Add option to restore alternating row colors to the Tag Browser under Preferences->Look & Feel->Tag Browser"
+
+    - title: "Update to Qt 4.8.2 on windows compiled with link time code generation for a small performance boost"
+ 
+  bug fixes:
+    - title: "Get Books: Update plugins to handle website changes at ebooks.com, project gutenberg, and virtualo"
+
+    - title: "AZW3 Output: Fix TOC at start option not working"
+
+    - title: "AZW3 Output: Close self closing script/style/title/head tags explicitly as they cause problems in webkit based renderers like the Kindle Fire and calibre's viewers."
+
+    - title: "Fix the current_library_name() template function not updating after a library switch"
+
+    - title: "AZW3 Output: Handle the case of a link pointing to the last line of text in the document."
+      tickets: [1011330]
+
+    - title: "Fix regression in 0.8.55 that broke highlighting of items matching a search in the Tag Browser"
+      tickets: [1011030] 
+
+    - title: "News download: Handle query only relative URLs"
+
+  improved recipes:
+    - Christian Science Monitor
+    - Neue Zurcher Zeitung
+    - Birmignham Post
+    - Metro UK 
+    - New Musical Express
+    - The Independent
+    - The Daily Mirror
+    - Vreme
+    - Smithsonian Magazine
+
+  new recipes:
+    - title: NZZ Webpaper 
+      author: Bernd Leinfelder
+
+
+- version: 0.8.55
+  date: 2012-06-08
+
+  new features:
+    - title: "Add a new 'Calibre style' interface look that is more modern than the default look. You can select it via Preferences->Look & Feel->User interface style."
+
+    - title: "New, subtler look for the Tag Browser"
+
+    - title: "Driver for Trekstor Pyrus and Pantech Android Tablet"
+      tickets: [1008946, 1007929]
+
+    - title: "Conversion pipeline: Handle guide elements with incorrectly cased hrefs. Also handle guide elements of type coverimagestandard and thumbimagestandard."
+
+    - title: "Allow user to customize trekstor plugin to send books into sub directories."
+      tickets: [1007646]
+
+    - title: "EPUB Input: Add support for EPUB files that use the IDPF font obfuscation algorithm. Apparently, people have started producing these now."
+      tickets: [1008810]
+
+    - title: "Save single format to disk: Only show the format available in the selected books."
+      tickets: [1007287]
+ 
+  bug fixes:
+    - title: "MOBI Output: When using the insert metadata at start of book option, do not use a table to layout the metadata, as the Kindle Fire crashes when rendering the table."
+      tickets: [1002119]
+
+    - title: "Device detection: Fix a bug that could cause device detection to fail completely if devices with certain vendor/product ids are connected."
+      tickets: [1009718]
+
+    - title: "MOBI Output: When rasterizing svgs only compute style information when an actual svg image is present. Small speedup when converting large svg-free documents to MOBI."
+
+    - title: "SONY T1 driver: Fix support for collections of books placed on the SD card"
+      tickets: [986044]
+
+    - title: "Fix partitioning problems in tag browser with fields that have no name, such as identifiers and formats"
+
+    - title: "Welcome wizard: Preferentially use the kindle email address set as default when more than one such address exists."
+      tickets: [1007932 ]
+
+    - title: "Fix regression in 0.8.54 that broke the use of the shortcut Alt+A to select books by the same author"
+
+  improved recipes:
+    - Various Polish recipes
+    - Vice Magazine
+    - EL Mundo Today
+    - Haaretz
+    - Good Housekeeping
+    - El Pais
+    - Christian Science Monitor
+    - Marketing Magazine
+    - Instapaper
+
+  new recipes:
+    - title: Various Philippine news sources 
+      author: jde
+
+    - title: Natemat.pl and wirtualnemedia.pl 
+      author: fenuks
+
+    - title: Rabble.ca
+      author: timtoo
+
+- version: 0.8.54
+  date: 2012-05-31
+
+  new features:
+    - title: "E-book viewer: The Table of contents panel now tracks the current position in the book. As you scroll through the book, the entry you are currently on is highlighted."
+      type: major
+      description: "To see this feature in action, open the Table of Contents panel in the viewer by clicking the button with three blue lines on it. As you page through the book, the chapter you are reading currently is highlighted in the Table of Contents Panel. Obviously, this will only work if the book you are reading has a Table of Contents. You can also use the Ctrl+PgUp and Ctrl+PgDn keys to quickly skip between chapters."
+
+    - title: "calibredb: Allow setting metadata for individual fields with the set_metadata command"
+
+    - title: "Make it a little harder to accidentally change the sorting of items in the Tag Browser. Also frees up more vertical space for the Tag Browser itself."
+
+    - title: "The calibre user manual is now available in AZW3 format as well as EPUB"
+
+  bug fixes:
+    - title: "Automatic titlecasing: No longer try to capitalize scottish names, as there are too many special cases." 
+      tickets: [775825] 
+
+    - title: "Never crash when reading metadata from PDF files (reading now always happens in a worker process)"
+      tickets: [1006452]
+
+    - title: "EPUB Input: Do no skip the valid children of an NCX node that has no text/href"
+
+    - title: "Archos driver: Detect SD card"
+      tickets: [1005650] 
+
+    - title: "When bulk downloading metadata and the user deletes one of the books for which metadata is being downloaded, just ignore it, instead of erroring out"
+
+    - title: "When deleting books from the bottom of the booklist, ensure that the bottom book after deleting is selected"
+
+    - title: "Fix regression in 0.8.53 that broke sending APNX files to older Kindle devices"
+
+    - title: "Use correct text color for selected rows in the list of matches when downloading metadata and showing results in get books."
+      tickets: [1004568]
+
+  improved recipes:
+    - The Independent
+    - Welt der Physik
+    - China Daily
+    - The Grid
+    - Prospect Magazine
+
+  new recipes:
+    - title: La gazetta del Mezzogiorno 
+      author: faber1971
+
+- version: 0.8.53
+  date: 2012-05-25
+
+  new features:
+    - title: "Kindle Touch/4 driver: Upload cover thumbnails when sending books to device by USB to workaround Amazon bug of not displaying covers for sync-enabled books"
+
+    - title: "Support for updating metadata in FB2 files"
+
+    - title: "Set a different background color when choosing formats to not delete as opposed to choosing format to delete."
+      tickets: [ 1001741 ] 
+
+    - title: "E-book viewer: Add an option to prevent the up and down arrow keys from scrolling past page breaks"
+
+    - title: "Get Books: Remove ebookshoppe.com at the website's request"
+ 
+  bug fixes:
+    - title: "PDF Input: Support image rotation commands in PDF files. Fixes the long standing problem of some  images being flipped when converting from PDF in calibre."
+
+    - title: "Fix a regression in 0.8.51 that caused conversion to HTMLZ to not have any CSS"
+
+    - title: "Get Books: Fix website change at kobo.com causing prices not to be found"
+
+    - title: "Edit the time in the 24 hour clock when calibre's interface language is set to German."
+      tickets: [ 1001809 ] 
+
+    - title: "MOBI Output: When generating joint KF8/MOBI6 .mobi files set the text length field in the MOBI 6 header correctly. "
+      tickets: [ 1003489 ] 
+
+    - title: "ODT Input: More workarounds for LibreOffice 3.5's habit of inserting pointless margin:100% directives everywhere."
+      tickets: [ 1002702 ] 
+
+    - title: "Fix regression that broke smarten punctuation when quotes were next to html tags."
+      tickets: [ 998900 ] 
+
+    - title: "Fix published date from ozon.ru wrong in some timezones"
+      tickets: [ 975338 ]
+
+    - title: "Catalogs: Handle the use of custom columns with non-ascii names correctly"
+      tickets: [1001437]
+
+    - title: "Conversion pipeline: Remove the attempt to detect and autocorrect if text will go off the left edge of the page, as it was a rather crude heuristic. Also do not remove fake margins if the book uses negative text indents on the margined elements."
+
+    - title: "KF8 Output: Set offsets to tags in the skeleton the same way kindlegen does. Also linearize non linear ToCs to ensure section to section jumping works."
+
+    - title: "Conversion pipeline: Use correct default value of 'inherit' for font-family and font-size when normalizing the shorthand font property."
+
+    - title: "When running python scripts via calibre-debug ensure that user plugins are loaded"
+
+  improved recipes:
+    - Business Week Magazine
+    - Metro Nieuws NL
+
+  new recipes:
+    - title: Attac.es 
+      author: Marc Busque
+
+    - title: Drytooling.com
+      author: Damian Granowski
+
+    - title: Shortlist.com 
+      author: Dave ASbury
+
+    - title: National Geographic (es) 
+      author: vakya
+
+- version: 0.8.52
+  date: 2012-05-18
+
+  new features:
+    - title: "EPUB Input: When setting the cover for a book that identifies its cover image, but not the html wrapper around the cover, try to detect and remove that wrapper automatically."
+      tickets: [ 999959 ] 
+
+    - title: "When deleting books of a specific format, show the number of books with each format available"
+
+    - title: "Linux install: No longer create MAN pages as all utilities have more comprehensive command line --help anyway"
+
+    - title: "Add a tweak Preferences->Tweaks to control the default choice of format for the Tweak Book feature"
+
+    - title: "Conversion: Allow setting negative page margins. A negative page margin means that calibre will not specify any page margin in the output document (for formats that support this)"
+ 
+  bug fixes:
+    - title: "Tweak book: Fix handling of covers when tweaking KF8 books"
+
+    - title: "KF8 Output: Handle input documents with out of sequence ToC entries. Note that currently section jumping in the KF8 output produced by calibre for such files does not work."
+      tickets: [1000493]
+
+    - title: "Edit metadata dialog: Fix the edit values button for custom tag-like columns showing a unneeded warning about changed values"
+
+    - title: "EPUB Output: Be a little more conservative when removing <form> tags. Only remove them if they have actual forms inside. "
+      tickets: [ 1000384 ]
+
+    - title: "EPUB Input: Correctly update the Cover entry in the ToC even when the entry has a fragment reference. "
+      tickets: [ 999973 ]
+
+    - title: "Update ImagMagick DLLs in all calibre binary builds to fix security vulnerabilities in ImageMagick"
+      tickets: [ 999496 ] 
+
+    - title: "Advanced search dialog: Fix equals and regex matching not being applied for custom column searches."
+      tickets: [ 980221 ] 
+
+    - title: "RTF Input: Handle old RTF files that have commands without braces."
+      tickets: [ 994133 ] 
+
+    - title: "Get Books: Diesel, fix results not showing when only a single match is found"
+
+    - title: "Get Books: Fix DRM status indicators for Kobo and Diesel stores. Fix smashwords not returning results."
+      tickets: [ 993755 ] 
+
+    - title: "Fix regression in 0.8.51 that broke viewing of LIT and some EPUB files"
+      tickets: [998248, 998216] 
+
+  improved recipes:
+    - Clarin
+    - Spiegel
+    - Spiegel International
+    - Montreal Gazette
+    - Gosc Niedzelny
+    - Ars Technica
+
+  new recipes:
+    - title: "Army/Navy/Air force/Marine Times and News busters" 
+      author: jde
+
+    - title: "Ads of the World, Heavy Meta (Italian) and Juve La Stampa"
+      author: faber1971
+
+    - title: "Revista Summa"
+      author: Vakya
+
+    - title: "Strategic culture"
+      author: Darko Miletic
+
+    - title: Stars and Stripes 
+      author: adoucette
+
+    - title: Nackdenkseiten 
+      author: jrda
+
+
+- version: 0.8.51
+  date: 2012-05-11
+
+  new features:
+    - title: "When switching libraries preserve the position and selected books if you switch back to a previously opened library."
+      tickets: [994514]
+
+    - title: "Conversion pipeline: Filter out the useless font-face rules inserted by Microsoft Word for every font on the system"
+
+    - title: "Driver for Motorola XT875 and Pandigital SuperNova"
+      tickets: [996890]
+
+    - title: "Add a colour swatch the the dialog for creating column coloring rules, to ease selection of colors"
+      tickets: [994811] 
+
+    - title: "EPUB Output: Consolidate internal CSS generated by calibre into external stylesheets for ease of editing the EPUB"
+
+    - title: "List EPUB and MOBI at the top of the dropdown list fo formats to convert to, as they are the most common choices"
+      tickets: [994838] 
+
+  bug fixes:
+    - title: "E-book viewer: Improve performance when switching between normal and fullscreen views."
+      tickets: [996102]
+
+    - title: "Edit metadata dialog: When running download metadata do not insert duplicate tags into the list of tags"
+
+    - title: "KF8 Input: Do not error out if the file has a few invalidly encoded bytes."
+      tickets: [997034]
+
+    - title: "Fix download of news in AZW3 format not working"
+      tickets: [996439]
+
+    - title: "Pocketbook driver: Update for new PB 611 firmware."
+      tickets: [903079]
+
+    - title: "ebook-convert: Error out if the user prvides extra command line args instead of silently ignoring them"
+      tickets: [994939] 
+
+    - title: "EPUB Output: Do not self close any container tags to prevent artifacts when EPUBs are viewed using buggy browser based viewers."
+      tickets: [994861]
+
+    - title: "Fix regression in 0.8.50 that broke the conversion of HTML files that contained non-ascii font-face declarations, typically produced by Microsoft Word"
+
+  improved recipes:
+    - Mainichi news
+    - derStandard
+    - Endgadget Japan
+
+  new recipes:
+    - title: Mainichi English
+      author: Hiroshi Miura
+
+    - title: The Grid TO
+      author: Yusuf W
+
+    - title: National Geographic (Italy)
+      author: faber1971
+
+    - title: Rebelion 
+      author: Marc Busque
+
+- version: 0.8.50
+  date: 2012-05-04
+
+  new features:
+    - title: "Tweak Book: Allow tweaking of KF8 MOBI files. Useful to fine-tune the result of a conversion. Right click on the book and select Tweak Book to use the feature. Note that tweaking a MOBI file that contains both KF8 and older MOBI6 will cause the MOBI6 version to be discarded."
+
+    - title: "AZW3 output plugin. This output plugin generates pure KF8 mobi files. These only work on the Kindle Fire and Kindle Touch with latest firmware."
+
+    - title: "Conversion: Allow easy re-ordering of the search and replace expressions in the conversion dialog. Also apply the expressions in the same order that they were entered when doing the conversion."
+
+    - title: "Automatically add the Tag 'Sample Book' when an Amazon sample is added to calibre"
+
+    - title: "FB2 Input: Better handling of inline images."
+      tickets: [989869]
+ 
+  bug fixes:
+    - title: "KF8 Output: Fix section to section jumps not working for documents with multi-level ToCs"
+
+    - title: "EPUB Input: Handle the case of the metadata ToC containing a reference to the cover HTML file."
+      tickets: [993812]
+
+    - title: "CHM Input: Handle files with deeply nested markup and non html files listed at the start of the manifest."
+      tickets: [993607]
+
+    - title: "KF8 Output: Workaround Kindle Touch bug that causes the book to be rendered as black pages when a height is specified for <body>"
+
+    - title: "Fix regression in 0.8.49 that broke italics detection in heuristic processing on 32-bit systems."
+      tickets: [991380] 
+
+    - title: "KF8 Output: Fix joint MOBI6/KF8 books not being recognized as MOBI files by older Kindles"
+
+    - title: "KF8 Output: Fix errors when processing documents with HTML comments and/or XML processing instructions"
+
+    - title: "Get Books: Amazon fix prices not being found. B&N fix details link. ebooks.com: fix cover image. Website changes to various EU stores"
+
+    - title: "FB2 Input: More robust base64 decoding to handle embedded images that are incorrectly encoded."
+      tickets: [990929]
+
+    - title: "Fix scrolling with the cover browser updating only the selection in the book list, not the current book."
+      tickets: [990881] 
+
+    - title: "Save to Disk: Do not run out memory when saving very large files on systems with low RAM."
+      tickets: [990741]
+
+    - title: "FB2 Output: Use 2 letter language codes in preference to 3-letter ones to not break poorly implemented FB2 readers"
+      tickets: [990026] 
+
+    - title: "EPUB Input: Auto set the media-type for OPF manifest entries with an empty media-type"
+
+  improved recipes:
+    - National Post
+    - Daily Mirror
+    - Sun
+    - Newsweek Polska
+    - Max-Planck
+    - derStandard
+    - tweakers.net
+
+  new recipes:
+    - title: George Monbiot 
+      author: Darko Miletic
+
+    - title: El Mundo
+      author: atordo
+
+    - title: AraInfo and Diagonal 
+      author: Ruben Pollan
+
+
+- version: 0.8.49
+  date: 2012-04-27
+
+  new features:
+    - title: "Experimental support for generating Amazon's new KF8 format MOBI files"
+      description: "calibre can now generate Amazon's new KF8 format MOBI files.
+      To turn on this feature, go to Preferences->Tweaks and click Plugin Tweaks. In the box add:
+      test_mobi_output_type = 'both'
+      calibre will now produce MOBI files that have both the old MOBI format and the new KF8 format in them. 
+      To learn more about KF8, see: http://www.amazon.com/gp/feature.html?docId=1000729511
+      Note that calibre support for KF8 is still experimental and there will likely be bugs."
+
+    - title: "Upgrade to using cssutils 0.9.9 for CSS parsing. Improved speed and robustness."
+
+    - title: "Show cover size in a tooltip in the conversion dialog"
+      tickets: [986958]
+
+    - title: "Driver for Nook Simple Touch with Glow Light"
+      tickets: [989264]
+ 
+  bug fixes:
+    - title: "Heuristics: When italicizing words do not operate on words not in between HTML tags."
+      tickets: [986298]
+
+    - title: "Fix (I hope) the bulk metadata download process crashing for some people on OS X when clicking the Yes button to apply the updates."
+      tickets: [986658] 
+
+    - title: "Fix tooltip not being updated in the book details panel when pasting in a new cover"
+      tickets: [986958]
+
+    - title: "Cover Browser: Wrap the title on space only, not in between words."
+      tickets: [986516]
+
+    - title: "Edit metadata dialog: If a permission denied error occurs when clicking the next or prev buttons, stay on the current book."
+      tickets: [986903]
+
+    - title: "Fix heuristics not removing unnecessary hyphens from the end of lines."
+      tickets: [822744]
+
+  improved recipes:
+    - Metro Nieuws NL
+    - Der Tagesspiegel
+
+  new recipes:
+    - title: Berria 
+      author: Alayn Gortazar
+
+    - title: Sol Haber 
+      author: Onur Gungor
+
+    - title: Telam
+      author: Darko Miletic
+
+    - title: Richmond Times-Dispatch
+      author: jde
+
+- version: 0.8.48
+  date: 2012-04-20
+
+  new features:
+    - title: "Conversion: The search and replace feature has been completely revamped."
+      description: "You can now use any number of search and replace
+      expression, not just three. You can also store and load frequently used
+      sets of search and replace expressions. Also, the wizard generates its
+      preview in a separate process to protect against crashes/memory leaks."
+      tickets: [983476,983484,983478]
+
+    - title: "Support for the new '.azw3' files that Amazon recently started generating. calibre will now detect them as ebooks. It can also view/convert them, if they are DRM free."
+
+    - title: "Drivers for Samsung Galaxy ACE GT-S5830L and HTC One X"
+      tickets: [981185] 
+ 
+  bug fixes:
+    - title: "Get Books: Support the new website design of Barnes & Noble"
+
+    - title: "T1 driver: Fix books sent to SD card sometimes resulting problems when deleted."
+      tickets: [943586]
+
+    - title: "Do not allow author names to be set to blank via the Manage authors function. Blank authors are now automatically set to 'Unknown'"
+
+    - title: "MOBI Output: Handle background color specified on <td> and <tr> in addition to <table> tags."
+      tickets: [980813]
+
+    - title: "MOBI Output: Fix underline style applied to parent element not getting inherited by <a> children."
+      tickets: [985711]
+
+  improved recipes:
+    - xkcd
+    - Metro Nieuws
+    - Calgary Herald
+    - Orlando Sentinel
+    - countryfile
+    - Heise
+
+  new recipes:
+    - title: Various new Polish news sources
+      author: fenuks
+
+    - title: Various Italian news sources 
+      author: faber1971
+
+    - title: Jakarta Globe 
+      author: rty
+
+    - title: Acim Bilim Dergisi
+      author: thomass
+
+- version: 0.8.47
+  date: 2012-04-13
+
+  new features:
+    - title: "Conversion pipeline: Add support for all the named entities in the HTML 5 spec."
+      tickets: [976056]
+
+    - title: "Support for viewing and converting the Haodoo PDB ebook format"
+      tickets: [976478]
+
+    - title: "Device driver for Laser EB720"
+ 
+  bug fixes:
+    - title: "Fix regression in automatic adding in 0.8.46 that broke automatic adding if adding of duplicates is enabled and auto convert is also enabled"
+      tickets: [976336]
+
+    - title: 'Fix "Tags" field in advanced search does not obey regex setting'
+      tickets: [980221]
+
+    - title: "EPUB Input: Automatically extract cover image from simple HTML title page that consists of only a single <img> tag, instead of rendering the page"
+
+    - title: "Prevent errors when both author and author_sort are used in a template for reading metadata from filenames for files on a device"
+
+    - title: "Amazon metadata download: Handle books whose titles start with a bracket."
+      tickets: [976365]
+
+    - title: "Get Books: Fix downloading of purchased books from Baen"
+      tickets: [975929]
+
+
+  improved recipes:
+    - Forbes
+    - Caros Amigos
+    - Trouw
+    - Sun UK
+    - Metro
+    - Daily Mirror
+
+  new recipes:
+    - title: "Melbourne Herald Sun"
+      author: Ray Hartley
+
+    - title: "Editoriali and Zerocalcare"
+      author: faber1971
+
+- version: 0.8.46
+  date: 2012-04-06
+
+  new features:
+    - title: "Auto adding: When automatically adding files from a folder, automatically convert the files to the current output format after adding. This can be turned off via Preferences->Adding Books->Automatic Adding."
+      tickets: [969053]
+
+    - title: "E-book viewer: When reading a MOBI file that is actually a KF8 book, show the format as being KF8"
+
+    - title: "Content server: Workaround for android stock browser not support HTTP AUTH."
+
+    - title: "Edit metadata dialog: Change the remove unused series button to a clear series button (as the remove unused series function is now automatic)"
+
+    - title: "Driver for PocketBook 622."
+      tickets: [969875]
+ 
+  bug fixes:
+    - title: "Run metadata downloads in a separate process to workaround memory leaks in third party plugins. Also removes the need to break up bulk metadata downloads into 100 book batches."
+
+    - title: "Make tag browser filtering work when capital letters are entered."
+
+    - title: "EPUB metadata: Ignore urn:isbn: prefix from ISBN declaration when reading metadata"
+
+    - title: "Get books: Fix feedbooks store not showing all available formats"
+
+    - title: "KF8 Input: When the KF8 book has no metadata ToC, try to extract the ToC from the HTML instead."
+      tickets: [969238]
+
+    - title: "Fix regression that broke access to Preferences via the Preferences item in the calibre menu on OS X"
+      tickets: [969418] 
+
+    - title: "Fix bug that ignored metadata specified on the command line when using calibredb add"
+
+  improved recipes:
+    - OReilly Premium 
+    - Real Clear
+    - Soldier's Magazine
+    - Rue89
+
+  new recipes:
+    - title: The Southern Star 
+      author: watou
+
+    - title: Buenos Aires Herald 
+      author: Darko Miletic
+
+- version: 0.8.45
+  date: 2012-03-30
+
+  new features:
+    - title: "E-book viewer: Allow the up and down keys to scroll past section boundaries"
+
+    - title: "calibredb: Allow specification of basic metadata on the command line when adding books."
+      tickets: [951063]
+
+    - title: "Driver for Samsung Galaxy Plus GT-I9001"
+
+    - title: "KF8 Input: Support KF8 format Amazon book samples."
+      tickets: [963418]
+
+    - title: "When a new plugin is added to calibre for the first time, have its icon (if any) show up even when a device is connected (this can be changed by the user at the time of plugin installation)"
+
+    - title: "Add keyboard shortcuts for Bold, Italic and Underline to the comments editor in the edit metadata dialog"
+      tickets: [963559] 
+ 
+  bug fixes:
+    - title: "E-book viewer: Fix last read position (and bookmarks in general) being inaccurate for some books."
+      description: "The technique for marking locations in books used by the viewer has changed. The new technique should be much more accurate than the last one, especially when the font size at which the book is being viewed is changed. Note that this change means that bookmarks created with this release of calibre will not be read by previous calibre versions. On a technical note, the viewer now uses the CFI specification from the EPUB 3 standard for bookmarks."
+      type: major
+
+    - title: "Workarounds for a few regressions in the user interface in 0.8.44 caused by the update to Qt 4.8.0"
+
+    - title: "Books list: Preserve the horizontal scroll position when sorting by a column"
+
+    - title: "Fix saving to disk and then adding the book back not restoring tags-like custom columns"
+
+    - title: "Linux installer: Fix completion for ebook-convert not working." 
+      tickets: [967834]
+
+    - title: "MOBI Output: Recognize type=text in addition to type=start guide elements"
+
+    - title: "Get Books: Updates to Nexto, Ebookpoint and Woblink stores"
+
+    - title: "Fix unable to clear username/password in Fetch news dialog"
+
+    - title: "PDF Output: Fix margin specifications not being applied"
+
+    - title: "Linux installer: Manually preserve the defaults.list mimetype association file to workaround buggy xdg-desktop-menu implementations in some distros."
+      tickets: [926559]
+
+    - title: "E-book viewer: Fix regression that caused the ebook viewer to stop functioning if it is launched from the main calibre program and then the main calibre program is closed."
+      tickets: [963960]
+
+
+  improved recipes:
+    - Our Daily Bread
+
+  new recipes:
+    - title: NRC Handelsblad (free)
+      author: veezh
+
+- version: 0.8.44
+  date: 2012-03-23
+
+  new features:
+    - title: "E-book viewer: A whole new full screen mode."
+      description: "The new mode has no toolbars to distract from the text and the ability to set the width of the column of text via Preferences in the ebook viewer. Click the Fullscreen button on the toolbar in the viewer to enter fullscreen mode (or press the F11 or Ctrl+Shit+F keys)"
+      type: major
+      tickets: [959830]
+
+    - title: "Copy to Library: If books were auto merged by the copy to library process, popup a message telling the user about it, as otherwise some people forget they have turned on auto merge and accuse calibre of losing their books."
+
+    - title: "Unix driver for Ectaco JetBook color"
+      tickets: [958442] 
+
+    - title: "Add a link to the 'Adding Books Preferences' in the drop down menu of the Add Books button for easier access and more prominence"
+      tickets: [958145] 
+
+    - title: "Smarten punctuation: Add a few more cases for detecting opening and closing quotes"
+ 
+  bug fixes:
+    - title: "Get Books: Updates to various store plugins to deal with website changes: Amazon Europe, Waterstones, Foyles, B&N, Kobo, Woblink and Empik"
+
+    - title: "Catalog generation: Do not error out when generating csv/xml catalogs if the catalog title contains filename invalid characters."
+      tickets: [960154]
+
+    - title: "RTF Output: Ignore corrupted images in the input document, instead of erroring out."
+      tickets: [959600]
+
+    - title: "E-book viewer: Try to preserve page position when the window is resized"
+
+    - title: "Fix bug that caused wrong series to be shown when clicking on the first letter of a series group in the Tag Browser"
+
+    - title: "Fix calibre not supporting different http and https proxies."
+      tickets: [960173]
+
+    - title: "MOBI Input: Fix regression caused by KF8 support that broke reading of ancient non-Amazon PRC files"
+
+    - title: "Fix EPUB to EPUB conversion of an EPUB with obfuscated fonts resulting in the fonts not being readable in Adobe Digital Editions"
+      tickets: [957527]
+
+    - title: "RTF Output: Fix bug that broke conversion to RTF when the input document contains <img> tags with no src attribute."
+
+    - title: "Fix regression in 0.8.43 that broke use of general mode templates that ended in a semi-colon."
+      tickets: [957295]
+
+  improved recipes:
+    - b92
+    - Various Polish news sources
+    - Le Monde
+    - FHM UK
+
+  new recipes:
+    - title: Ivana Milakovic and Klub knjige 
+      author: Darko Miletic
+
+
+- version: 0.8.43
+  date: 2012-03-16
+
+  new features:
+    - title: "Template language: Speedup evaluation of general program mode templates by pre-compiling them to python. If you experience errors with this optimization, you can turn it off via Preferences->Tweaks. Also other miscellaneous optimizations in evaluating templates with composite columns."
+
+    - title: "MOBI Output: Add an option to not convert all images to JPEG when creating MOBI files. For maximum compatibility of the produced MOBI files, do not use this option."
+      tickets: [954025]
+
+    - title: "Add iPad3 Output Profile"
+ 
+  bug fixes:
+    - title: "KF8 Input: Add support for KF8 files with obfuscated embedded fonts"
+      tickets: [953260] 
+
+    - title: "Make the stars in the book list a little larger on windows >= vista"
+
+    - title: "Revised periodical Section layout, for touchscreen devices resolving iBooks problem with tables spanning multiple pages"
+
+    - title: "Read dc:contributor metadata from MOBI files"
+
+    - title: "MOBI Output: Fix a regression that caused the generated thumbnail embedded in calibre produced MOBI files to be a large, low quality image instead of a small, high quality image. You would have been affected by this bug only if you directly used the output from calibre, without exporting it via send to device or save to disk."
+      tickets: [954254]
+
+    - title: "KF8 Input: Recognize OpenType embedded fonts as well."
+      tickets: [954728]
+
+    - title: "Fix regression in 0.8.41 that caused file:/// URLs to stop working in the news download system on windows."
+      tickets: [955581]
+
+    - title: "When setting metadata in MOBI files fix cover not being updated if the mobi file has its first image record as the cover"
+
+    - title: "Fix column coloring rules based on the size column not working"
+      tickets: [953737] 
+
+  improved recipes:
+    - Microwaves and RF
+    - idg.se
+
+  new recipes:
+    - title: SatMagazine 
+      author: kiavash
+
+- version: 0.8.42
+  date: 2012-03-12
+
+  new features:
+    - title: "Support for reading Amazon's new KF8 format"
+      type: major
+      description: "calibre can now both view and convert MOBI files that contain Amazon's new KF8 (Kindle Fire) format"
+
+    - title: "Add a tweak to Preferences->Tweaks to control the font size used in the book details panel"
+      tickets: [948357] 
+
+    - title: "Allow specifying a list of file types to exclude when automatically adding files from a folder"
+      tickets: [943025]
+
+    - title: "Show ratings in the book details panel as stars. Also allow the user to change the alignment of the ratings column in the main books list. No longer display the stars in blue, instead their color can be customized via the column coloring rules, like any other column"
+
+    - title: "When setting metadata in EPUB ensure that the <meta name=cover> tag has its name attribute first. Needed for the Nook."
+
+    - title: "Drivers for Novo 7, LG G2x and Zenithink T-280"
+      tickets: [941671, 940625, 940527]
+
+    - title: "Update linux binaries to Qt 4.8.0"
+    
+  bug fixes:
+    - title: "Fix some rar files causing crashes on OS X (updated libunrar.dylib in the OS X build)"
+      tickets: [951185]
+
+    - title: "MOBI Output: Ignore the Table of Contents pointed to by the guide, if it contains no links"
+
+    - title: "ODT Input: Ignore margin declaration in ODT styles if more specific margin-* declarations are present"
+      tickets: [941134]
+
+    - title: "Conversion pipeline: Fix @import rules in CSS stylesheets that have comments on their first few lines being ignored."
+
+    - title: "EPUB Input: When extracting the contents of epub files on windows, do not error out if one or more of the components in the epub file have filepaths containing characters that are invalid for the windows filesystem, instead, just replace those characters, since those entries are likely to be errors in the zip container anyway."
+      tickets: [950081]
+
+    - title: "Textile output: Fix issue with blockquotes and sentences getting removed."
+
+    - title: "MOBI Output: When using the prefer author sort conversion option, handle multiple authors better."
+      tickets: [947146]
+
+    - title: "Fix regression in 0.8.41 that broke direct connection to iDevices in windows"
+      tickets: [944534]
+
+    - title: "Fix the download bulk metadata completed popup causing a crash if the Esc key is pressed."
+      tickets: [943056]
+
+    - title: "Fix rating values doubled in CSV/XML catalogs"
+      tickets: [942790]
+
+    - title: "EPUB Input: Remove non markup documents from the spine automatically, instead of erroring out"
+
+    - title: "When formatting ratings in templates, etc., do not have an unnecessary .0"
+
+    - title: "Calibre portable: Do not allow calibre portable to run if it is placed in a location whose path is too long. Also hide the library location setup in the welcome wizard when running the portable build."
+
+    - title: "Fix regression in 0.8.41 that broke calibre if the TMP or TEMP environment variable is set to the root of a drive."
+      tickets: [952284]
+
+    - title: "Fix display of ratings type custom fields in the content server"
+      tickets: [940600]
+
+
+  improved recipes:
+    - La Jornada
+    - Chicago Tribune
+    - Mediapart 
+    - rue89
+
+  new recipes:
+    - title: Racjonalista 
+      author: Racjonlista
+
+    - title: JAPAA 
+      author: adoucette
+
+
+- version: 0.8.41
+  date: 2012-02-24
+
+  new features:
+    - title: "Driver for Sony Experia Play 4G"
+      tickets: [938831]
+
+    - title: "News download system: Allow use of __future__ in recipes, and do not change line numbers of code in the recipe when compiling it"
+
+    - title: "Use the My Documents folder as the default location for the Calibre Library folder on first start in windows"
+      tickets: [934840] 
+
+    - title: "Add a tweak to Preferences->Tweaks to control the order in which categories appear in the Tag Browser"
+
+    - title: "Tag Browser: Add an entry to the right click menu to quickly delete tags"
+      tickets: [934509] 
+
+    - title: "Amazon metadata download: Try to scrape series information from the amazon details page. Note that currently very few books have series info available. Often the page for hardcover will have series, but the Kindle edition will not. In such cases calibre may or may not find the series, depending on which page it ends up using."
+
+    - title: "Content server: Add favicon to OPDS feeds."
+      tickets: [934731]
+ 
+  bug fixes:
+    - title: "RTF Input: Fix some WMF images embedded in RTF files being distorted on conversion."
+      tickets: [934167]
+
+    - title: "Fix long standing bug preventing calibre from working on east asian windows installs when the user name in windows has non-ascii characters"
+      tickets: [937389]
+
+    - title: "Get Books: Fix Baen Webscription and O'Reilly stores. Fix price detection for Google Books"
+
+    - title: "MOBI Output: When the same anchor is present more than once in the input document, use the first occurrence rather than the last one."
+      tickets: [934031]
+
+    - title: "Use the 'default cover font' tweak when generating default masthead images as well"
+      tickets: [939256] 
+
+    - title: "Fix content server does not correctly display custom field of type 'rating'"
+      tickets: [938303] 
+
+    - title: "Fix welcome wizard does not save send-from email info unless send-to field is filled"
+      tickets: [937087] 
+
+    - title: "When reading metadata from odt files, use initial-creator in preference to creator for setting the author field"
+      tickets: [934564] 
+
+    - title: "Fix conversion erroring out when the input document has very long and thin images"
+      tickets: [935234]
+
+  improved recipes:
+    - The Sun
+    - Various Polish news sources
+    - Mediapart
+
+  new recipes:
+    - title: La pausa caffe 
+      author: faber1971
+
+    - title: Various Polish news sources 
+      author: fenuks
+
+
+- version: 0.8.40
+  date: 2012-02-17
+
+  new features:
+    - title: "Amazon metadata download: Support the new 'Book Description' section that Amazon publishes for some books. Also workaround the amazon US servers occasionally returning broken markup leading to calibre not finding any matches for books on Amazon."
+
+    - title: "Kindle driver: Add an option to allow using page counts stored in a custom column. Go to Preferences->Plugins and customize the Kindle driver, to tell it to use a custom column to get page count data. See http://www.mobileread.com/forums/showpost.php?p=1963075&postcount=215 for details."
+
+    - title: "Template language: Add a current_library_name() function that can be used to return the name of the currently opened library in calibre"
+
+    - title: "Driver for Xperia Neo and PocketBook A10"
+      tickets: [930788] 
+ 
+  bug fixes:
+    - title: "Fix regression in 0.8.36 that caused the calibredb command to not properly refresh format information in standalone calibre-server processes"
+
+    - title: "Fix regression in 0.8.39 that broke getting covers from some epub files on OS X."
+      tickets: [932507]
+
+    - title: "Reading metadata from HTML files: Do not take a very long time for very large HTML files. Also fix reading metadata from meta tags with multiple spaces before the content attribute."
+      tickets: [932262] 
+
+    - title: "EPUB Output: Fix splitting breaking internal links in the epub, if the links pointed to files with URL unsafe characters in their file names."
+      tickets: [929966]
+
+    - title: "Fix auto adding not leaving languages field blank when book has no defined laguage"
+      tickets: [930648] 
+
+  improved recipes:
+    - Samanyolu Haber
+    - Kurier
+    - Le devoir
+    - Daily Mirror
+    - Common Dreams
+    - Pescanik
+
+  new recipes:
+    - title: Asian Review of Books 
+      author: Darko Miletic
+
+    - title: Albert Mohler, Desiring God, Living Stones and Resurgence 
+      author: Peter Grungi
+
+    - title: Novinite BG 
+      author: M3 Web
+
+    - title: Catholic Daily Readings 
+      author: adoucette
+
+    - title: Consortium News and Microwave and RF magazine
+      author: kiavash
+
+- version: 0.8.39
+  date: 2012-02-10
+
+  new features:
+    - title: "Auto-adding: Add an option to check for duplicates when auto adding."
+      tickets: [926962]
+
+    - title: "Content server: Export a second record via mDNS that points to the full OPDS feed in addition to the one pointing to the Stanza feed. The new record is of type _calibre._tcp."
+      tickets: [929304]
+
+    - title: "Allow specifying a set of categories that are not partitioned even if they contain a large number of items in the Tag Browser. Preference is available under Look & Feel->Tag Browser"
+
+    - title: "Allow setting a URL prefix for the content server that run embedded in the calibre GUI as well."
+      tickets: [928905] 
+
+    - title: "Allow output of identifiers data in CSV/XML/BiBTeX catalogs"
+      tickets: [927737] 
+
+    - title: "Driver for Motorola Droid XT910, Nokia E71 and HTC EVO 3D."
+      tickets: [928202, 927818, 929400]
+
+    - title: "Cut down the time taken to launch worker processes by 40%"
+
+    - title: "You can now configure the calibre settings for the currently connected device by right clicking on the device icon in the toolbar, instead of having to go through Preferences->Plugins"
+ 
+  bug fixes:
+    - title: "Auto-adding: Do not add incomplete files when files are downloaded directly into the auto add folder."
+      tickets: [926578]
+
+    - title: "When running multiple delete from device jobs, fix the device view sometimes marking the wrong books as being deleted, after the first delete job completes."
+      tickets: [927972]
+
+    - title: "MOBI Input: Handle files that have spurious closing </body> and/or </html> tags in their markup."
+      tickets: [925833]
+
+    - title: "RTF Input: Strip out false color specifications, as they cause artifacts when converted to MOBI"
+
+  improved recipes:
+    - Updated Postmedia publications
+    - Foreign Affairs
+    - Read It Later
+    - Microwave Journal
+    - taggeschau.de
+
+  new recipes:
+    - title: Vancouver Province and Windsor Star 
+      author: Nick Redding
+
+    - title: Onda Rock 
+      author: faber1971
+
+    - title: Il Manifesto 
+      author: Giacomo Lacava 
+
+- version: 0.8.38
+  date: 2012-02-03
+
+  new features:
+    - title: "Implement the ability to automatically add books to calibre from a specified folder."
+      type: major
+      description: "calibre can now watch a folder on your computer and instantly add any files you put there to the calibre library as new books. You can tell calibre which folder to watch via Preferences->Adding Books->Automatic Adding."
+      tickets: [920249] 
+
+    - title: "Conversion: When automatically inserting page breaks, do not put a page break before a <h1> or <h2> tag if it is immediately preceded by another <h1> or <h2> tag."
+
+    - title: "Driver for EZReader T730 and Point-of-View PlayTab Pro"
+      tickets: [923283, 922969]
+ 
+  bug fixes:
+    - title: "Fix device entry not visible in menubar even when it has been added via Preferences->Toolbars."
+      tickets: [923175]
+
+    - title: "Fix metadata plugboards not applied when auto sending news by email"
+
+    - title: "Fix regression in 0.8.34 that broke recipes that used skip_ad_pages() but not get_browser(). "
+      tickets: [923724] 
+
+    - title: "Restore device support on FreeBSD, by using HAL"
+      tickets: [924503]
+
+    - title: "Get books: Show no more than 10 results from the Gandalf store"
+
+    - title: "Content server: Fix metadata not being updated when sending for some MOBI files."
+      tickets: [923130]
+
+    - title: "Heuristic processing: Fix the italicize common patterns algorithm breaking on some HTML markup."
+      tickets: [922317]
+
+    - title: "When trying to find an ebook inside a zip file, do not fail if the zip file itself contains other zip files."
+      tickets: [925670]
+
+    - title: "EPUB Input: Handle EPUBs with duplicate entries in the manifest."
+      tickets: [925831]
+
+    - title: "MOBI Input: Handle files that have extra </html> tags sprinkled through out their markup."
+      tickets: [925833]
+
+  improved recipes:
+    - Metro Nieuws NL
+    - FHM UK
+
+  new recipes:
+    - title: Strange Horizons 
+      author: Jim DeVona
+
+    - title: Telegraph India and Live Mint 
+      author: Krittika Goyal
+
+    - title: High Country News 
+      author: Armin Geller
+
+    - title: Countryfile
+      author: Dave Asbury
+
+    - title: Liberation (subscription version) 
+      author: Remi Vanicat
+
+    - title: Various Italian news sources 
+      author: faber1971
+
+
+- version: 0.8.37
+  date: 2012-01-27
+
+  new features:
+    - title: "Allow calibre to be run simultaneously in two different user accounts on windows."
+      tickets: [919856]
+
+    - title: "Driver for Motorola Photon and Point of View PlayTab"
+      tickets: [920582, 919080] 
+
+    - title: "Add a checkbox to preferences->plugins to show only user installed plugins"
+
+    - title: "Add a restart calibre button to the warning dialog that pops up after changing some preference that requires a restart"
+ 
+  bug fixes:
+    - title: "Fix regression in 0.8.36 that caused the remove format from book function to only delete the entry from the database and not delete the actual file from the disk"
+      tickets: [921721]
+
+    - title: "Fix regression in 0.8.36 that caused the calibredb command to not properly refresh the format information in the GUI"
+      tickets: [919494] 
+
+    - title: "E-book viewer: Preserve the current position more accurately when changing font size/other preferences."
+      tickets: [912406]
+
+    - title: "Conversion pipeline: Fix items in the <guide> that refer to files with URL unsafe filenames being ignored."
+      tickets: [920804]
+
+    - title: "Fix calibre not running on linux systems that set LANG to an empty string"
+
+    - title: "On first run of calibre, ensure the columns are sized appropriately"
+
+    - title: "MOBI Output: Do not collapse whitespace when setting the comments metadata in newly created MOBI files"
+
+    - title: "HTML Input: Fix handling of files with ä characters in their filenames."
+      tickets: [919931]
+
+    - title: "Fix the sort on startup tweak ignoring more than three levels"
+      tickets: [919584]
+
+    - title: "Edit metadata dialog: Fix a bug that broke adding of a file to the book that calibre did not previously know about in the books directory while simultaneously changing the author or title of the book."
+      tickets: [922003]
+
+  improved recipes:
+    - People's Daily
+    - Plus Info
+    - grantland.com
+    - Eret es irodalom 
+    - Sueddeutsche.de
+
+  new recipes:
+    - title: Mumbai Mirror 
+      author: Krittika Goyal
+
+    - title: Real Clear 
+      author: TMcN
+
+    - title: Gazeta Wyborcza 
+      author: ravcio
+
+    - title: The Daily News Egypt and al masry al youm 
+      author: Omm Mishmishah
+
+    - title: Klip.me 
+      author: Ken Sun
+
+
+- version: 0.8.36
+  date: 2012-01-20
+
+  new features:
+    - title: "Decrease startup time for large libraries with at least one composite custom column by reading format info on demand"
+
+    - title: "When automatically deleting news older than x days, from the calibre library, only delete the book if it both has the tag News and the author calibre. This prevents accidental deletion of books tagged with News by the user."
+
+    - title: "Driver for Infibeam Pi 2"
+
+    - title: "Add a Tag Editor for tags like custom columns to the edit metadata dialog"
+ 
+  bug fixes:
+    - title: "E-book viewer: Fix regression in 0.8.35 that caused viewer to raise an error on books that did not define a language"
+
+    - title: "Content server: Fix grouping for categories based on custom columns."
+      tickets: [919011]
+
+    - title: "Edit metadata dialog: When setting the series from a format or via metadata download, ensure that the series index is not automatically changed, when closing the dialog."
+      tickets: [918751]
+
+    - title: "When reading metadata from Topaz (azw1) files, handle non ascii metadata correctly."
+      tickets: [917419]
+
+    - title: "CHM Input: Do not choke on CHM files with non ascii internal filenames on windows."
+      tickets: [917696]
+
+    - title: "Fix reading metadata from CHM files with non-ascii titles"
+
+    - title: "Fix HTML 5 parser choking on comments"
+
+    - title: "If calibre is started from a directory that does not exist, automatically use the home directory as the working directory, instead of crashing"
+
+    - title: "Fix iriver story HD Wi-Fi device and external SD card swapped"
+      tickets: [916364] 
+
+    - title: "Content server: Fix ugly URLs for specific format download in the book details and permalink panels"
+
+    - title: "When adding FB2 files do not set the date field from the metadata in the file"
+
+  improved recipes:
+    - OReilly Premuim
+    - Variety
+    - Blic
+    - New Journal of Physics
+    - Der Tagesspiegel
+
+  new recipes:
+    - title: Tweakers.net 
+      author: Roedi06
+
+    - title: Village Voice 
+      author: Barty
+
+    - title: Edge.org Conversations 
+      author: levien
+
+    - title: Novi list - printed edition
+      author: Darko Miletic
+
+- version: 0.8.35
+  date: 2012-01-13
+
+  new features:
+    - title: "Metadata plugboards: Allow creation of plugboards for email delivery."
+      tickets: [914012]
+
+    - title: "Tweak EPUB: Also allow tweaking of HTMLZ files (when both EPUB and HTMLZ are present, EPUB is preferred, this can be changed via Preferences->Tweaks)."
+
+    - title: "TXT Input: Support direct conversion of files with extensions .md, .markdown and .textile." 
+      tickets: [912931]
+
+    - title: "E-book viewer: Speed up the optional hyphenation algorithm by upgrading the hyphenator library calibre uses"
+
+    - title: "Drivers for PocketBook 611, Motorola Razr Droid and Onyx Boox i62"
+ 
+  bug fixes:
+    - title: "MOBI Output: When converting a paragraph that contains only a non-breaking space into a line break, ignore paragraphs with height less than 2pt."
+      tickets: [915150]
+
+    - title: "MOBI Input: Handle MOBI files that specify anchor point exactly at pagebreaks. These are apparently produced by John Wiley and Sons."
+      tickets: [914036]
+
+    - title: "Fetch news dialog: The Download now button is no longer scrolled out of view on OS X for news sources that require credentials"
+
+    - title: "Fix commas being removed from author names when generating filenames in the calibre library"
+
+    - title: "ODT Input: Dont crash on empty links"
+
+    - title: "ebook-convert: Allow use of leading ./ when specifying output file names."
+      tickets: [913954] 
+
+    - title: "Fix deleting of hierarchical searches broken in Tag Browser"
+      tickets: [912345] 
+
+    - title: "Metadata search and replace: Fix rendering error when choosing {template}"
+      tickets: [913154]
+
+    - title: "Fix calibre not starting when stray .po files are present in the working directory"
+      tickets: [913054]
+
+    - title: "Do not error out when getting metadata for authors if the author name has either ::: or :#: in it."
+      tickets: [912713]
+
+  improved recipes:
+    - Pagina 12
+    - USA Today
+    - LWN Weekly
+    - Seattle Times
+    - San Jose Mercury
+    - Grantland.com
+
+  new recipes:
+    - title: Lega Nerd and Pambianco
+      author: faber1971
+
+    - title: Various Turkish news sources 
+      author: asalet_r
+
+    - title: Microwave Journal 
+      author: Kiavash
+
+    - title: OReilly Premium 
+      author: TechnoCat
+
+    - title: Hamilton Spectator and Tillsonburg/Norfolk County 
+      author: Eric Coolman
+
+    - title: Opinion Bolivia 
+      author: Piet van Oostrum
+
+    - title: ideal.es 
+      author: Josemi Liebana
+
+    - title: Novilist Portal
+      author: Darko Miletic
+
+- version: 0.8.34
+  date: 2012-01-06
+
+  new features:
+    - title: "Apple driver: Set the year field in iTunes based on the published date in calibre." 
+      tickets: [909050]
+
+    - title: "EPUB Input: When converting a file that has entries in the manifest that do no exist, remove them, instead of aborting the conversion."
+      tickets: [910933]
+
+    - title: "Kindle driver: Ensure page counts are correctly sent to the device when connecting to Kindle 4/Touch."
+      tickets: [910279]
+
+    - title: "Allow user to set the number of recently viewed books shown in the dropdown menu of the view button, via a tweak in Preferences->Tweaks."
+      tickets: [910292]
+ 
+  bug fixes:
+    - title: "Fix regression in 0.8.33 that caused calibre to crash when starting the Content Server, if the port the content server is trying to listen on is blocked/busy."
+      tickets: [910512]
+
+    - title: "MOBI Input: Fix regression that caused a mixup of images when the MOBI file header contains an incorrect first image index pointer."
+      tickets: [911243]
+
+    - title: "Do not remove leading and trailing spaces from the replace fields in the Search and Replace conversion options"
+      tickets: [910523]
+
+    - title: "Conversion pipeline: Fix regression in 0.8.31 that broke parsing of documents containing a self closing <title/> tag."
+      tickets: [910325]
+
+  improved recipes:
+    - Kopalnia Wiedzy
+    - Alternet
+    - Tagesspiegel
+    - Philadelphia Inquirer
+    - Seattle Times
+    - La Razon
+
+  new recipes:
+    - title: Various Italian news sources 
+      author: faber1971
+
+    - title: money.pl 
+      author: intromatyk
+
+    - title: Diario Rio Negro
+      author: Darko Miletic.
+
+    - title: FHM UK 
+      author: Dave Asbury
+
+- version: 0.8.33
+  date: 2011-12-30
+
+  new features:
+    - title: "LIT Input: Switch to non-recursive algorithm, to allow conversion of files with deeply nested markup."
+      tickets: [909535]
+
+    - title: "Content server: Do not show the original_* formats in the mobile interface. Also upgrade to the latest CherryPy release."
+
+    - title: "E-book viewer: Add option in viewer preferences to control how much the font size is changed when you click the make fonts bigger/smaller buttons."
+      tickets: [908980]
+
+    - title: "E-book viewer: Allow changing font size via Ctrl+Mouse wheel"
+      tickets: [908975] 
+
+    - title: "Kobo driver: Hide previews and recommendations from the book list. You can customize the Kobo plugin if you would like to see them via Preferences->Plugins"
+ 
+  bug fixes:
+    - title: "Copy to library: Fix title sort not being copied"
+
+    - title: "PDF Output: Add custom size conversion option to the GUI (it was only present on the command line before)"
+
+    - title: "Add missing --keep-ligatures option to the ebook-convert command line"
+      tickets: [909182]
+      
+    - title: "Fix rendering of non ascii characters in generated masthead images when downloading news for the Kindle"
+
+    - title: "Linux binary: Disable qt-sp-api as it causes crashes/performance issues on various distros"
+
+    - title: "E-book viewer: Ensure that reference mode highlighting is removed from the book when reference mode is closed."
+      tickets: [908982]
+
+    - title: "Fix unable to load plugins from files on GNOME/XFCE desktops"
+
+    - title: "Fix regression that broke customizing toolbars on non English calibre installs"
+
+    - title: "Conversion pipeline: Disable HTML 5 parsing if it results in deeply nested trees."
+      tickets: [908818]
+
+    - title: "Do not loose position in book list on device connection/sync, if a search is active."
+      tickets: [908553]
+
+    - title: "Fix regression in 0.8.32 that broke deleting books if the path to the library contained non-ascii characters on linux"
+      tickets: [908068] 
+
+  improved recipes:
+    - Echo Online
+    - La Razon
+
+  new recipes:
+    - title: NYTimes Global
+      author: Krittika Goyal
+
+    - title: Grantland 
+      author: Barty
+
+- version: 0.8.32
+  date: 2011-12-23
+
+  new features:
+    - title: "Linux: When deleting books, send them to the recycle bin, instead of permanently deleting. This is the same behavior as on Windows and OS X."
+
+    - title: "Add a checkbox to allow users to disable the popup that asks if books should be auto-converted before sending to device"
+
+    - title: "Drivers for Droid Razr, Samsung GT-I9003 and Bookeen Odyssey"
+      tickets: [906356, 906056, 905862] 
+
+    - title: "Allow passing multiple filenames as command line arguments to calibre, to add multiple books."
+      tickets: [907968]
+ 
+  bug fixes:
+    - title: "MOBI Output: Fix regression in 0.8.30 that caused the use of hidden heading elements for the TOC to generate links in the wrong place."
+      tickets: [907156]
+
+    - title: "EPUB Output: Ensure directories have the correct permissions bits set when unzipping an epub with unzip on Unix"
+
+    - title: "Fix bottom most shortcuts in keyboard shortcuts for viewer not editable"
+
+    - title: "EPUB Output: Fix handling of self closing <audio> tags."
+      tickets: [906521]
+
+    - title: "MOBI Input: Map invalid <o:p> tags to <p> tags before parsing, to handle broken nesting."
+      tickets: [905715] 
+
+    - title: "Conversion pipeline: HTML5 parsing: Fix handling of XML namespaces. Fixes regression in 0.8.30 that caused some articles in some news downloads to appear blank when viewed in Adobe Digital Editions based readers"
+
+    - title: "Get Books: Gandalf store, fix price and cover detection"
+
+    - title: "EPUB Output: Fix the Flatten filenames option in EPUB Output causing duplicated manifest ids in rare cases."
+      tickets: [905692]
+
+    - title: "When adding books via ISBN, show the user the list of invalid ISBNs that will be ignored, if any, before starting the add operation."
+      tickets: [905690]
+
+    - title: "Fix unsmarten punctuation conversion option broken in 0.8.31."
+      tickets: [905596]
+
+    - title: "Fix broken evaluation of composite columns in save-to-disk"
+
+  improved recipes:
+    - Cosmopolitan UK
+    - Hindustan Times
+    - HVG
+    - moneynews.com
+    - Ming Pao
+    - Glasgow Herald
+    - Times of India
+    - Focus Magazine
+    - Hacker News
+    - Independent
+    - Sueddeutsche
+
+  new recipes:
+    - title: Prospect Magazine UK 
+      author: Barty and duoloz
+
+    - title: Elet es Irodalom and NOL 
+      author: Bigpapa
+
+    - title: Salonica Press News
+      author: SteliosGero
+
+    - title: Echo Online 
+      author: Armin Geller
+
+    - title: Various Polish news sources 
+      author: fenuks
+
+    - title: Various Italian news sources 
+      author: faber1971
+
+- version: 0.8.31
+  date: 2011-12-16
+
+  new features:
+    - title: "Conversion engine: When parsing invalid XHTML use the HTML 5 algorithm, for greater robustness."
+      tickets: [901466]
+
+    - title: "Driver for PocketBook 611 and Lenovo IdeaPad"
+
+    - title: "Allow customization of the order in which custom column editing is performed in the edit metadata dialog. Setting is available via Preferences->Tweaks."
+      tickets: [902731]
+
+    - title: "MOBI news download: Allow recipes to set a thumbnail for entries in the periodical table of contents. Currently used by the NYTimes, WSJ, Independent, GUardian and Globe and Mail recipes"
+      tickets: [900130]
+
+    - title: "E-book viewer: Add an option to the right click menu to search for the currently selected word"
+
+    - title: "Automatically hide the no internet connection available error message if the connection is restored before the user clicks OK"
+ 
+  bug fixes:
+    - title: "Fix comments not hidden in Book details panel when they are turned off via Preferences->Look & Feel->Book Details"
+
+    - title: "E-book viewer: Do not popup an error message if the user tries to use the mouse wheel to scroll before a document is loaded."
+      tickets: [903449] 
+
+    - title: "Add docx to the list of ebook extensions."
+      tickets: [903452]
+
+    - title: "When downloading metadata from non-English Amazon websites, do not correct the case of book titles."
+
+    - title: "Fix regression in 0.8.30 that broke bulk conversion of a single book." 
+      tickets: [902506]
+
+    - title: "When minimized to system tray do not display the no internet connection error as a dialog box, instead use a system tray notification"
+
+    - title: "Catalog generation: Include the series_index field for custom series columns as well"
+
+    - title: "Comic Input: Do not rescale images when using the Tablet output profile (or any output profile with a screen size larger than 3000x3000)"
+
+    - title: "HTML Input: Ignore unparseable URLs instead of crashing on them."
+      tickets: [902372] 
+
+
+  improved recipes:
+    - La Republica
+    - CND
+    - Berliner Zeitung
+    - Zaman Gazetesi
+
+  new recipes:
+    - title: CND Weekly
+      author: Derek Liang
+
+    - title: descopera.org 
+      author: Marius Ignatescu
+
+    - title: Rynek Zdrowia 
+      author: spi630
+
+- version: 0.8.30
+  date: 2011-12-09
+
+  new features:
+    - title: "Get Books: Add amazon.es and amazon.it"
+
+    - title: "Bulk convert dialog: Disable the Use saved conversion settings checkbox when none of the books being converted has saved conversion settings"
+
+    - title: "ebook-viewer: And a command line switch to specify the position at which the file should be opened."
+      tickets: [899325]
+
+    - title: "Distribute calibre source code compressed with xz instead of gzip for a 40% reduction in size"
+
+  bug fixes:
+    - title: "Get Books: Fix ebooks.com and amazon.fr. Fix cover display in Diesel ebooks store."
+
+    - title: "HTML Input: Fix regression that broke processing of a small fraction of HTML files encoded in a multi-byte character encoding."
+      tickets: [899691]
+
+    - title: "Greatly reduce the delay at the end of a bulk metadata edit operation that operates on a very large number (thousands) of books"
+
+    - title: "Template language: Fix the subitems formatter function to split only when the period is surrounded by non-white space and not another period"
+
+    - title: "Fix ampersands in titles not displaying in the Cover Browser"
+
+    - title: "MOBI Output: Do not ignore an empty anchor at the end of a block element."
+
+    - title: "MOBI Output: Handle links to inline anchors placed inside large blocks of text correctly, i.e. the link should not point to the start of the block."
+      tickets: [899831]
+
+    - title: "E-book viewer: Fix searching for text that is represented as entities in the underlying HTML."
+      tickets: [899573]
+
+    - title: "Have the Esc shortcut perform exactly the same set of actions as clicking the clear button."
+      tickets: [900048]
+
+    - title: "Prevent the adding books dialog from becoming too wide"
+
+    - title: "Fix custom column editing not behaving correctly with the Previous button in the edit metadata dialog."
+      tickets: [899836]
+
+    - title: "T1 driver. More fixes to datetime handling to try to convince the T1's buggy firmware to not rescan metadata."
+      tickets: [899514]
+
+    - title: "Only allow searching via non accented author names if the user interface language in calibre is set to English."
+      tickets: [899227]
+
+  improved recipes:
+    - Die Zeit subscription
+    - Metro UK
+    - suedeutsche.de
+
+  new recipes:
+    - title: Blues News 
+      author: Oskar Kunicki
+
+    - title: "TVXS"
+      author: Hargikas
+
+
+- version: 0.8.29
+  date: 2011-12-02
+
+  new features:
+    - title: "When searching for author names with accented characters, allow the non accented version to match. For example, searching for Nino will now match Niño."
+      tickets: [879729]
+
+    - title: "Driver for Blackberry Playbook, Motorola Electrify and Samsung Galaxy GIO S5660"
+      tickets: [805745,898123,897330]
+
+    - title: "Metadata search and replace, make the regular expressions unicode aware"
+ 
+  bug fixes:
+    - title: "Fix regression in 0.8.28 that broke sending PDF files to iTunes"
+      tickets: [896791]
+
+    - title: "Metadata download, do not strip # from titles." 
+      tickets: [898310]
+
+    - title: "Conversion pipeline: Do not error out on books that set font size to zero."
+      tickets: [898194]
+
+    - title: "News download: Respect the delay setting when downloading RSS feeds as well."
+      tickets: [897907]
+
+    - title: "EPUB Output: Ensure that xml:lang is set if lang is set as ADE looks for xml:lang, not lang"
+      tickets: [897531]
+
+    - title: "Content server: Reduce memory consumption when sending very large files"
+      tickets: [897343] 
+
+    - title: "Preserve capitalization of Scottish author names when downloading metadata"
+
+    - title: "Fix update title sort in bulk metadata edit not using language information"
+
+    - title: "Fix sorting by published column in the download metadata dialog broken"
+      tickets: [896832] 
+
+    - title: "Allow use of languages field when generating CSV/XML catalogs"
+      tickets: [896620] 
+
+    - title: "Get Books: Fix ebookpoint.pl"
+
+    - title: "When calculating title sort for a book based on its language, only use the specified language not a combination of the language and english"
+      tickets: [896412]
+
+  improved recipes:
+    - Metro NL
+    - Ming Pao
+    - Rolling Stones Mag
+    - Buffalo News
+
+  new recipes:
+    - title: gs24.pl and Gazeta.pl Szczecin
+      author: Michal Szkutnik
+
+    - title: Vanity Fair 
+      author: Barty
+
+    - title: Skylife
+      author: thomass
+
+    - title: Daily Writing Tips
+      author: NotTaken
+
+    - title: TechDirt
+      author: Krittika Goyal
+
+    - title: Cosmopolitan UK
+      author: Dave Asbury
+
+- version: 0.8.28
+  date: 2011-11-25
+
+  new features:
+    - title: "Get Books: Add litres.ru store"
+
+    - title: "Change the algorithm that generates title sort strings to strip leading articles from both english and the current language set for the calibre user interface. In addition, in the edit metadata dialog, calibre will use the book's language when calculating the sort string. This behavior can be adjusted via Preferences->Tweaks."
+      tickets: [886763]
+
+    - title: "Driver for Cybook Odyssey."
+      tickets: [893457]
+
+    - title: "Irex driver: Put books into the top level directory instead of into /ebooks or /Books."
+      tickets: [883616]
+  
+  bug fixes:
+    - title: "Have downloaded periodicals recognized when transferred via USB to the Kindle Fire"
+
+    - title: "MOBI Output: Fix underline and strikethrough properties declared on parents not being rendered on child tags."
+      tickets: [894245]
+
+    - title: "Template language: Fix regression that broke ordering of items when formatting a list"
+
+    - title: "Conversion pipeline: When removing obsolete <font> tags convert them to <div> instead of <span> if they contain block level tags."
+      tickets: [892525] 
+
+    - title: "When downloading metadata, fix the case normalization of double-barelled author names."
+      tickets: [893257]
+
+    - title: "Template language: Fix regression that broke using general program mode in save to disk templates"
+
+    - title: "calibredb: Fix use of ranges when specifying ids for the remove command"
+
+    - title: "Apple driver: Add ids for iPhone 4S. More robust against iTunes automation errors when adding artwork."
+      tickets: [892468]
+
+    - title: "Fix encoding of comments incorrectly detected when downloading metadata from ozon.ru"
+
+    - title: "Fix calibre not getting list of books on the Kindle Fire"
+
+  improved recipes:
+    - El Mundo
+    - BBC
+    - NIN Online
+    - ABC Australia
+    - Salon.com
+    - Expansion (Spanish)
+    - The Week
+    - Heise Online
+
+  new recipes:
+    - title: Give me something to read and Let's get Critical
+      author: Barty
+
+    - title: Worldcrunch
+      author: Krittika Goyal
+
+- version: 0.8.27
+  date: 2011-11-18
+
+  new features:
+    - title: "Drivers for the Kindle Fire and the Nook Tablet"
+      tickets: [890918] 
+
+    - title: "Conversion: Add an option under Look & Feel to remove specified style information (CSS) from the document during conversion."
+      tickets: [871384]
+
+    - title: "Add an option in the bulk metadata edit dialog to restore the pre-conversion files for many books with a single click."
+      tickets: [886116]
+
+    - title: "Jobs list: Add the ability to search for and to hide jobs, useful if you have run a lot of jobs and the list is getting crowded."
+      tickets: [883734]
+
+    - title: "Book jacket generation: Add ability to customize the book jacket template and add custom columns into the jacket."
+      tickets: [889912]
+
+    - title: "MOBI Input: Performance improvement when viewing/converting a file with a lot of links"
+  
+  bug fixes:
+    - title: "Fix regression in 0.8.26 that broke disabling the update of particular fields during a bulk metadata download." 
+      tickets: [889696]
+
+    - title: "Get Books: Fix DRM status for legimi"
+
+    - title: "When parsing for lxml via BeatifulSoup, use the calibre modified copy of BeautifulSoup (more robust)."
+      tickets: [889890]
+
+    - title: "HTML Input: Handle double encoded URLs in img tags"
+      tickets: [889323] 
+
+  improved recipes:
+    - Various Polish recipes
+    - Academia Catavencu
+    - El Periodico de Aragon 
+    - Weblogs SL
+    - Folha de Sao Paolo (subscription)
+
+  new recipes:
+    - title: News on Japan
+      author: Krittika Goyal
+
+    - title: Formula AS 
+      author: Silviu Cotoara
+
+    - title: Various Turkish news sources 
+      author: Osman Kaysan
+
+    - title: Infra.pl and Spider's Web 
+      author: fenuks
+
+
+- version: 0.8.26
+  date: 2011-11-12
+
+  new features:
+    - title: "Tweak to control sorting of date type columns. You can choose to have them sorted only by displayed fields"
+
+    - title: "Driver for the Trekstor 3.0"
+
+    - title: "Performance improvements when evaluating templates, and in particular general program mode templates"
+  
+  bug fixes:
+    - title: "ODT Input: When converting to EPUB improve handling of large images placed inside small frames, to prevent them from obscuring text."
+      tickets: [860272,884759]
+
+    - title: "EPUB Input: Automatically strip entries of type application/text from the spine. Apparently there are EPUB production tools out there that create them."
+      tickets: [884792]
+
+    - title: "Keep the startup splash screen visible until the GUI has fully completed initializing."
+      tickets: [885827]
+
+    - title: "ODT Input: Fix handling of span tags containing only whitespace."
+      tickets: [887311]
+
+    - title: "On windows when changing title or author via the main book list, handle the case of one of the books files being open in another program more gracefully."
+      tickets: [880585]
+
+    - title: "When adding a format to an existing book record, ensure that no changes are made to the database until after the file operations have succeeded."
+
+    - title: "Fix bug that prevented configuring which fields to download metadata for when adding books by ISBN"
+      tickets: [856076] 
+
+    - title: "Fix Japanese characters not being crrectly displayed on index pages in news downloads for the SONY T1"
+      tickets: [888029] 
+
+    - title: "Get Books: Fix booleans in search expressions not working in non-English calibre versions"
+      tickets: [887554]
+
+    - title: "Fix a bug in the support for hours/minutes/seconds in datetime format strings"
+      tickets: [887412] 
+
+    - title: "Treat an author_sort value of 'Unknown' the same way as unknown authors are treated in template processing"
+
+    - title: "Detect SD card in Kobo Vox"
+
+    - title: "Amazon metadata download: Workaround for change in Amazon website causing some books to have incorrect ratings downloaded"
+
+  improved recipes:
+    - Metro NL
+    - The Independent
+    - Frankfurter Rundschau
+    - L'Espresso
+    - Il Giornale
+    - Berlingske.dk
+    - Suedeutsche Zeitung
+
+  new recipes:
+    - title: Techtarget 
+      author: Julio Map
+
+
